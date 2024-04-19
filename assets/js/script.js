@@ -30,8 +30,8 @@ plusBtn.addEventListener("click", function () {
   let newRow = document.createElement("li");
   newRow.classList.add("row");
   newRow.innerHTML = `
-        <input type="text" name="name" class="name" />
-        <input type="text" name="value" class="value" />
+        <input type="text" name="name" class="name text-input" />
+        <input type="text" name="value" class="value text-input" />
     `;
   document.getElementsByTagName("ol")[0].appendChild(newRow);
 });
@@ -48,7 +48,6 @@ minusBtn.addEventListener("click", function () {
 /* create the data array */
 
 let dataSet = [];
-
 let allRows = document.getElementsByClassName("row");
 
 function createDataSet(rows) {
@@ -80,7 +79,7 @@ function giveFeedback() {
 
 /* ChARTING */
 
-/* setting the chart (code snippets from developers.google.com) */
+/* setting the chart (customized code snippets from developers.google.com) */
 
 function drawChart() {
   var data = new google.visualization.DataTable();

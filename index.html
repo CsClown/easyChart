@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/style.css" />
 
+    <!-- Google charts -->
     <script
       type="text/javascript"
       src="https://www.gstatic.com/charts/loader.js"
@@ -12,30 +13,37 @@
     <title>Data Setter Exp</title>
   </head>
   <body>
-    <h1 id="main-heading">Chartbreaker</h1>
+
+    <!-- Heading -->
+    <h1 id="main-heading">easyChart</h1>
+
+    <!-- Chart title setter-->
     <div id="title-setter">
       <label for="title-input">name your chart </label>
-      <input type="text" name="title" id="title-input" />
-      <button id="title-submit-btn">submit</button>
+      <input type="text" name="title" id="title-input" class="text-input" />
+      <button id="title-submit-btn" class="btn">submit</button>
     </div>
     <div id="set-title"></div>
-    <!-- Area to put in the Data -->
+
+    <!-- Area to put in the Data (expandable through JS)-->
     <div id="data-setter">
       <div>
+        <h3 id="name-heading">Name</h3>
+        <h3 id="value-heading">Value</h3>
         <ol class="row-list">
           <li class="row">
-            <input type="text" name="name" class="name" />
-            <input type="text" name="value" class="value" />
+            <input type="text" name="name" class="name text-input" />
+            <input type="number" name="value" class="value text-input" />
           </li>
         </ol>
       </div>
       <div class="btn-div">
-        <button id="plus-row-btn">+row</button
-        ><button id="minus-row-btn">-row</button>
+        <button id="plus-row-btn" class="btn">+row</button
+        ><button id="minus-row-btn" class="btn">-row</button>
       </div>
     </div>
 
-    <button id="sd">show data</button>
+    <button id="sd" class="btn">show data</button>
     <div id="feedback"></div>
     <div id="chart-div"></div>
 

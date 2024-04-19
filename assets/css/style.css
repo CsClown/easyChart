@@ -1,7 +1,18 @@
+:root {
+  --main-color: #D5FFF1;
+  --off-color: #A0C8BB;
+  --third-color: #6D9487;
+  --border-radius: 4px;
+  --main-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+html {
+  background-color: #2F4858;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 body {
@@ -9,31 +20,81 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: "Poppins", sans-serif;
-  background-color: #f5f5f5;
+  
 }
 
+.btn {
+  box-shadow: var(--main-shadow);
+  border-style: hidden;
+  border-radius: var(--border-radius);
+  background-color: var(--main-color);
+}
+
+
 #main-heading {
+  color: var(--main-color);
+  letter-spacing: 0.3rem;
   margin-top: 20px;
+  text-shadow: #d5fff176 0px 0px 4px;
 }
 
 #title-setter {
+  background-color: var(--third-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--main-shadow);
   margin-top: 50px;
+  padding: 20px;
+}
+
+#title-submit-btn {
+  width: 80px;
+  height: 20px;
+  border-radius: var(--border-radius);
+}
+
+.text-input {
+  border-radius: var(--border-radius);
+  border-style: hidden;
+  height: 1.5rem;
+  margin: 10px;
 }
 
 #data-setter {
+  box-shadow: var(--main-shadow);
+  background-color: var(--off-color);
+  border-radius: var(--border-radius);
   border: 1px solid #ccc;
   align-items: center;
   margin-top: 50px;
   padding: 20px;
 }
+
+#data-setter div {
+  
+  padding: 20px;
+}
+
+#name-heading {
+  display: inline-block;
+  width: 230px;
+}
+
+#value-heading {
+  
+  display: inline-block;
+}
+
 #data-setter button {
+  box-shadow: var(--main-shadow);
   margin-top: 20px;
   width: 100px;
+  border-style: hidden;
+  border-radius: var(--border-radius);
 }
 
 .btn-div {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 #set-title {
   margin: 20px;
@@ -44,5 +105,10 @@ body {
 }
 
 #sd {
+  
+  background-color: var(--main-color);
   margin: 20px;
+  width: 250px;
+  height: 50px;
+  
 }
