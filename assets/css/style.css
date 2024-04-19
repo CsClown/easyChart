@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   --main-color: #d5fff1;
@@ -6,12 +6,15 @@
   --third-color: #6d9487;
   --border-radius: 4px;
   --main-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --small-margin: 20px;
+  --big-margin: 40px;
 }
 html {
   background-color: #2f4858;
 }
+
 * {
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-weight: 300;
   letter-spacing: 0.1rem;
   margin: 0;
@@ -26,9 +29,9 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-h1 {
+#main-heading {
   font-weight: 200;
-  font-size: 600%;
+  font-size: 300%;
 }
 
 #set-title {
@@ -37,6 +40,7 @@ h1 {
   background-color: var(--off-color);
   border-radius: var(--border-radius);
 }
+
 .btn {
   box-shadow: var(--main-shadow);
   border-style: hidden;
@@ -44,44 +48,27 @@ h1 {
   background-color: var(--main-color);
 }
 
-.draw-chart-btn {
-  margin: 20px;;
-  padding: 20px;
-}
-
 #main-heading {
   color: var(--main-color);
   letter-spacing: 0.3rem;
-  margin-top: 20px;
+  margin: 20px;
   text-shadow: #d5fff176 0px 0px 4px;
 }
 
 #title-setter {
-  display: flex;
-  align-items: center;
-  background-color: var(--third-color);
-  border-radius: var(--border-radius);
   box-shadow: var(--main-shadow);
-  margin-top: 30px;
-  padding: 20px;
-}
-
-#title-submit-btn {
-  padding: 2px 20px;
+  background-color: var(--off-color);
   border-radius: var(--border-radius);
+  border: hidden;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: var(--small-margin);
+  padding: 10px;
 }
 
-
-#rename-btn {
-  padding: 2px 20px;
-}
-
-.text-input {
-  border-radius: var(--border-radius);
-  border-style: hidden;
-  height: 1.5rem;
-  margin: 10px;
-  opacity: 60%;
+#title-setter .text-input {
+  margin: 5px 10px;
 }
 
 #data-setter {
@@ -90,65 +77,141 @@ h1 {
   border-radius: var(--border-radius);
   border: hidden;
   align-items: center;
-  margin-top: 50px;
+  margin-top: var(--small-margin);
+  padding: 10px 20px;
+}
+#data-setter div {
+  position: relative;
   padding: 20px;
 }
 
-#data-setter div {
-  padding: 20px;
+#title-submit-btn {
+  font-size: 50%;
+  padding: 2px 20px;
+  border-radius: var(--border-radius);
+}
+
+#rename-btn {
+  padding: 2px 20px;
+}
+
+.text-input {
+  padding-left: 6px;
+  border-radius: var(--border-radius);
+  border-style: hidden;
+  height: 1.5rem;
+  opacity: 60%;
 }
 
 #name-heading {
   display: inline-block;
-  width: 230px;
 }
 
 #value-heading {
+  position: relative;
   display: inline-block;
+  left: 145px;
 }
 
 #data-setter button {
   box-shadow: var(--main-shadow);
-  margin-top: 20px;
+  margin-bottom: 10px;
+
   width: 100px;
   border-style: hidden;
   border-radius: var(--border-radius);
 }
 
+/* + row button DIV */
 .btn-div {
   display: flex;
-  justify-content: space-around;
-}
 
-#plus-row-btn > .fa-plus {
-  font-size: 70%;
+  justify-content: center;
+  align-items: center;
 }
 
 #plus-row-btn {
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 16px;
+  padding: 5px;
+}
+
+#chart-buttons {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.draw-chart-btn {
+  margin: 5px;
   padding: 10px;
+  flex-basis: 50%;
+}
+
+#example-chart-btn {
+  background-color: #d1ed8d;
 }
 
 #chart-div {
-  /* width: 500px;
-  height: 500px; */
   background-color: var(--main-color);
 }
 
 .fa-solid {
-  font-size: 200%;
+  font-size: 100%;
 }
 
+@media screen and (min-width: 768px) {
+  #main-heading {
+    font-weight: 200;
+    font-size: 600%;
+  }
+  #title-setter {
+    display: flex;
+    align-items: center;
+    background-color: var(--third-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--main-shadow);
+    margin-top: 30px;
+    padding: 20px 30px;
+  }
 
-/* relic */
-#sd {
-  display: none;
-  background-color: var(--main-color);
-  margin: 20px;
-  width: 250px;
-  height: 50px;
+  .text-input {
+    width: 200px;
+  }
+
+  #data-setter {
+    margin-top: var(--big-margin);
+    padding: 20px;
+  }
+
+  #value-heading {
+    left: 330px;
+  }
+
+  .text-input {
+    margin: 10px;
+  }
+
+  #plus-row-btn {
+    letter-spacing: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    padding: 10px;
+  }
+  #chart-buttons {
+    display: block;
+  }
+  .draw-chart-btn {
+    padding: 20px;
+  }
+  .fa-solid {
+    font-size: 200%;
+  }
 }
