@@ -27,6 +27,7 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: "Poppins", sans-serif;
+  max-width: 100vw;
 }
 
 #main-heading {
@@ -72,6 +73,9 @@ body {
 }
 
 #data-setter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   box-shadow: var(--main-shadow);
   background-color: var(--off-color);
   border-radius: var(--border-radius);
@@ -79,6 +83,7 @@ body {
   align-items: center;
   margin-top: var(--small-margin);
   padding: 10px 20px;
+  max-width: 100vw;
 }
 #data-setter div {
   position: relative;
@@ -99,6 +104,7 @@ body {
   padding-left: 6px;
   border-radius: var(--border-radius);
   border-style: hidden;
+  width: 100px;
   height: 1.5rem;
   opacity: 60%;
 }
@@ -110,7 +116,7 @@ body {
 #value-heading {
   position: relative;
   display: inline-block;
-  left: 145px;
+  left: 95px;
 }
 
 #data-setter button {
@@ -137,6 +143,10 @@ body {
   align-items: center;
   font-size: 16px;
   padding: 5px;
+}
+
+#data-setter .remove-row-btn {
+  width: 45px;
 }
 
 #chart-buttons {
@@ -182,6 +192,7 @@ body {
 
   .text-input {
     width: 200px;
+    margin: 10px;
   }
 
   #data-setter {
@@ -193,9 +204,6 @@ body {
     left: 330px;
   }
 
-  .text-input {
-    margin: 10px;
-  }
 
   #plus-row-btn {
     letter-spacing: 0.2rem;
