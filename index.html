@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <title>Data Setter Exp</title>
+  </head>
+  <body>
+    <h1 id="main-heading">Chartbreaker</h1>
+    <div id="title-setter">
+      <label for="title-input">name your chart </label>
+      <input type="text" name="title" id="title-input" />
+      <button id="title-submit-btn">submit</button>
+    </div>
+    <div id="set-title"></div>
+    <!-- Area to put in the Data -->
+    <div id="data-setter">
+      <div>
+        <ol class="row-list">
+          <li class="row">
+            <input type="text" name="name" class="name" />
+            <input type="text" name="value" class="value" />
+          </li>
+        </ol>
+      </div>
+      <div class="btn-div">
+        <button id="plus-row-btn">+row</button
+        ><button id="minus-row-btn">-row</button>
+      </div>
+    </div>
+
+    <button id="sd">show data</button>
+    <div id="feedback"></div>
+    <div id="chart-div"></div>
+
+    <script src="assets/js/script.js" type="text/javascript"></script>
+  </body>
+</html>
