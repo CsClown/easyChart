@@ -30,6 +30,13 @@ h1 {
   font-weight: 200;
   font-size: 600%;
 }
+
+#set-title {
+  margin: 0px 20px;
+  padding: 10px 20px;
+  background-color: var(--off-color);
+  border-radius: var(--border-radius);
+}
 .btn {
   box-shadow: var(--main-shadow);
   border-style: hidden;
@@ -55,18 +62,13 @@ h1 {
 }
 
 #title-submit-btn {
-  width: 80px;
-  height: 20px;
+  padding: 2px 20px;
   border-radius: var(--border-radius);
 }
 
-#set-title {
-  margin: 10px;
-}
 
 #rename-btn {
-  padding: 5px;
-  
+  padding: 2px 20px;
 }
 
 .text-input {
@@ -74,6 +76,7 @@ h1 {
   border-style: hidden;
   height: 1.5rem;
   margin: 10px;
+  opacity: 60%;
 }
 
 #data-setter {
@@ -111,12 +114,7 @@ h1 {
   display: flex;
   justify-content: space-around;
 }
-#set-title {
-  margin: 20px;
-  padding: 10px 20px;
-  background-color: var(--off-color);
-  border-radius: var(--border-radius);
-}
+
 #chart-div {
   /* width: 500px;
   height: 500px; */

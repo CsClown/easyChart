@@ -18,7 +18,7 @@ function titleSwitch() {
   title = document.getElementById("title-input").value;
   document.getElementById("title-setter").innerHTML = `
                   <span>Chart title:  </span>
-                  <h3 id="set-title">"${title}"</h3>
+                  <h4 id="set-title">"${title}"</h4>
                   `;
   let renameBtn = document.createElement("button");
   renameBtn.textContent = "rename";
