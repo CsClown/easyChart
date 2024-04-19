@@ -4,7 +4,7 @@ google.charts.load("current", { packages: ["corechart"] });
 
 /* setting the title of the chart */
 
-/* setting EventListener on button parent because on button it gets lost on DOM change */
+/* setting EventListener on button-parent because on button it gets lost on DOM change */
 let titleSetter = document.getElementById("title-setter");
 titleSetter.addEventListener("click", function (event) {
   if (event.target.matches("#title-submit-btn")) {
@@ -16,15 +16,15 @@ let title = "generic chart";
 
 function titleSwitch() {
   title = document.getElementById("title-input").value;
-  document.getElementById("title-setter").innerHTML = `<div id="set-title-div">
+  document.getElementById("title-setter").innerHTML = `
                   <span>Chart title:  </span>
-                  <h2 id="set-title">"${title}"</h2>
-                  </div>`;
+                  <h3 id="set-title">"${title}"</h3>
+                  `;
   let renameBtn = document.createElement("button");
   renameBtn.textContent = "rename";
   renameBtn.classList = "btn";
   renameBtn.id = "rename-btn";
-  document.getElementById("set-title-div").appendChild(renameBtn);
+  document.getElementById("title-setter").appendChild(renameBtn);
 
   /* reverse changes if "rename" is clicked */
   renameBtn.addEventListener("click", function () {

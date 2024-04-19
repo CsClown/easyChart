@@ -13,6 +13,7 @@ html {
 * {
   font-family: 'Jost', sans-serif;
   font-weight: 300;
+  letter-spacing: 0.1rem;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -25,6 +26,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+h1 {
+  font-weight: 200;
+  font-size: 600%;
+}
 .btn {
   box-shadow: var(--main-shadow);
   border-style: hidden;
@@ -40,10 +45,12 @@ body {
 }
 
 #title-setter {
+  display: flex;
+  align-items: center;
   background-color: var(--third-color);
   border-radius: var(--border-radius);
   box-shadow: var(--main-shadow);
-  margin-top: 50px;
+  margin-top: 30px;
   padding: 20px;
 }
 
@@ -52,14 +59,6 @@ body {
   height: 20px;
   border-radius: var(--border-radius);
 }
-#set-title-div {
-  display: flex;
-  align-items: center;
-}
-
-#set-title-div > span {
-  margin: 10px;
-}
 
 #set-title {
   margin: 10px;
@@ -67,7 +66,7 @@ body {
 
 #rename-btn {
   padding: 5px;
-  margin: 10px;
+  
 }
 
 .text-input {
@@ -81,7 +80,7 @@ body {
   box-shadow: var(--main-shadow);
   background-color: var(--off-color);
   border-radius: var(--border-radius);
-  border: 1px solid #ccc;
+  border: hidden;
   align-items: center;
   margin-top: 50px;
   padding: 20px;
@@ -121,6 +120,7 @@ body {
 #chart-div {
   /* width: 500px;
   height: 500px; */
+  background-color: var(--main-color);
 }
 
 #sd {
