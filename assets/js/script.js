@@ -79,10 +79,23 @@ function removeSpecificRow(event) {
   index = listItems.indexOf(removeListItem);
   dataSet.splice(index, 1);
   removeListItem.remove();
-
 }
 
+/* row adder */
 plusBtn.addEventListener("click", function () {
+  // checking if theres already a button next to first list item
+  // then appending it and creating a new row
+  let checkBtn = document.querySelector('.remove-row-btn');
+  if (!(checkBtn)) {
+    let firstRowBtn = document.createElement('button');
+    firstRowBtn.classList="remove-row-btn btn";
+    firstRowBtn.innerText="-row";
+    let firstRow = document.querySelector('ol li');
+    if (firstRow) {
+      firstRow.appendChild(firstRowBtn);
+    }
+  }
+
   let newRow = document.createElement("li");
   newRow.classList.add("row");
   newRow.innerHTML = `
@@ -91,6 +104,9 @@ plusBtn.addEventListener("click", function () {
         <button class='remove-row-btn btn'>-row</button>
     `;
   document.getElementsByTagName("ol")[0].appendChild(newRow);
+
+  
+  
 });
 
 function removeRow() {
@@ -101,7 +117,7 @@ let minusBtn = document.getElementById("minus-row-btn");
 
 minusBtn.addEventListener("click", function () {
   let rows = document.getElementsByClassName("row");
-  if (rows.length > 1) {
+  if (rows.length >= 1) {
     rows[rows.length - 1].remove();
   }
 });
