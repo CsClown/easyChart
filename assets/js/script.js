@@ -4,22 +4,55 @@ google.charts.load("current", { packages: ["corechart"] });
 
 /* setting the title of the chart */
 
-let titleBtn = document.getElementById("title-submit-btn");
-let title = "your title here";
+/* setting EventListener on button parent because on button it gets lost on DOM change */
+let titleSetter = document.getElementById("title-setter");
+titleSetter.addEventListener("click", function (event) {
+  if (event.target.matches("#title-submit-btn")) {
+    titleSwitch();
+  }
+});
+
+let title = "generic chart";
+
+function titleSwitch() {
+  title = document.getElementById("title-input").value;
+  document.getElementById("title-setter").innerHTML = `<div id="set-title-div">
+                  <span>Chart title:  </span>
+                  <h2 id="set-title">"${title}"</h2>
+                  </div>`;
+  let renameBtn = document.createElement("button");
+  renameBtn.textContent = "rename";
+  renameBtn.classList = "btn";
+  renameBtn.id = "rename-btn";
+  document.getElementById("set-title-div").appendChild(renameBtn);
+
+  /* reverse changes if "rename" is clicked */
+  renameBtn.addEventListener("click", function () {
+    document.getElementById(
+      "title-setter"
+    ).innerHTML = `<label for="title-input">name your chart </label>
+      <input type="text" name="title" id="title-input" class="text-input" />
+      <button id="title-submit-btn" class="btn">submit</button>`;
+
+    /* setting the EventListener for the "Enter" input repeatedly because it gets lost on DOM change */
+    document
+      .getElementById("title-input")
+      .addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          titleSwitch();
+        }
+      });
+  });
+}
 
 /* *click* */
-titleBtn.addEventListener("click", function () {
-  title = document.getElementById("title-input").value;
-  document.getElementById("set-title").innerText = "Title is set: " + title;
-});
 
 /* *Enter* */
 document
   .getElementById("title-input")
   .addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-      title = document.getElementById("title-input").value;
-      document.getElementById("set-title").innerText = "Title is set: " + title;
+      titleSwitch();
     }
   });
 

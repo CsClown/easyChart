@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --main-color: #d5fff1;
   --off-color: #a0c8bb;
@@ -9,6 +11,8 @@ html {
   background-color: #2f4858;
 }
 * {
+  font-family: 'Jost', sans-serif;
+  font-weight: 300;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -110,6 +114,9 @@ body {
 }
 #set-title {
   margin: 20px;
+  padding: 10px 20px;
+  background-color: var(--off-color);
+  border-radius: var(--border-radius);
 }
 #chart-div {
   /* width: 500px;
