@@ -2,6 +2,8 @@
 google.charts.load("current", { packages: ["corechart"] });
 // google.charts.setOnLoadCallback(drawChart);
 
+/* initializing the DataSet */
+let dataSet = [];
 /* setting the title of the chart */
 
 /* setting EventListener on button-parent because on button it gets lost on DOM change */
@@ -57,7 +59,28 @@ document
   });
 
 /* Adding and removing rows of the data set */
+
 let plusBtn = document.getElementById("plus-row-btn");
+let dataSetter = document.getElementById('data-setter');
+
+dataSetter.addEventListener('click', function(event){
+  if (event.target.matches('.remove-row-btn')) {
+    removeSpecificRow(event);
+  }
+});
+
+// Removes a specific row from the Data Set by navigation through the
+// DOM via closest <li> item and fetching its index from its parent <ol>
+function removeSpecificRow(event) {
+  let orderedList = document.getElementById('row-list');
+  let removeBtn = event.target;
+  let removeListItem = removeBtn.closest('li');
+  let listItems = Array.from(orderedList.children);
+  index = listItems.indexOf(removeListItem);
+  dataSet.splice(index, 1);
+  removeListItem.remove();
+
+}
 
 plusBtn.addEventListener("click", function () {
   let newRow = document.createElement("li");
@@ -65,9 +88,14 @@ plusBtn.addEventListener("click", function () {
   newRow.innerHTML = `
         <input type="text" name="name" class="name text-input" />
         <input type="number" name="value" class="value text-input" />
+        <button class='remove-row-btn btn'>-row</button>
     `;
   document.getElementsByTagName("ol")[0].appendChild(newRow);
 });
+
+function removeRow() {
+
+}
 
 let minusBtn = document.getElementById("minus-row-btn");
 
@@ -80,7 +108,7 @@ minusBtn.addEventListener("click", function () {
 
 /* create the data array */
 
-let dataSet = [];
+
 let allRows = document.getElementsByClassName("row");
 
 function createDataSet(rows) {
