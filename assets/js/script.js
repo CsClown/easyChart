@@ -202,4 +202,41 @@ function drawChart(chartType) {
   }
 
   chart.draw(data, options);
+  document.getElementById('chart-div').scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+    inline: 'nearest'
+  });
 }
+
+/* Landscape Orientation for mobile (code mostly from chatGPT) */
+if ('orientation' in screen) {
+  let chartDiv = document.getElementById('chart-div');
+  let observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        screen.orientation.lock('landscape-primary')
+        .then(() => {
+          console.log('Orientation locked to landscape');
+        })
+        .catch((error) => {
+          console.error('Failed to lock orientation: ', error);
+        });
+      } else {
+        screen.orientation.unlock()
+          .then(() => {
+            console.log('Orientation unlocked');
+          })
+          .catch((error) => {
+            console.error('Failed to unlock orientation: ', error);
+          });
+        }
+    })
+  });
+  
+  observer.observe(chartDiv);
+} else {
+    console.error('Screen Orientation API not supported');
+};
+
+
