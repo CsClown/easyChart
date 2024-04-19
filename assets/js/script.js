@@ -177,8 +177,8 @@ function giveFeedback() {
 function drawChart(chartType) {
   var data = new google.visualization.DataTable();
 
-  data.addColumn("string", "Topping");
-  data.addColumn("number", "Slices");
+  data.addColumn("string", "Item");
+  data.addColumn("number", "Value");
   data.addRows(dataSet);
 
   var options = { title: title, width: 400, height: 300 };

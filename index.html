@@ -13,11 +13,11 @@
 
 <body>
   <!-- Heading -->
-  <h1 id="main-heading">easyChart</h1>
+  <h1 id="main-heading">easyChart<i class="fa-solid fa-chart-simple"></i></h1>
 
   <!-- Chart title setter-->
   <div id="title-setter">
-    <label for="title-input">name your chart </label>
+    <label for="title-input">name your chart <i class="fa-solid fa-file-signature"></i></label>
     <input type="text" name="title" id="title-input" class="text-input" />
     <button id="title-submit-btn" class="btn">submit</button>
   </div>
@@ -36,19 +36,22 @@
       </ol>
     </div>
     <div class="btn-div">
-      <button id="plus-row-btn" class="btn">+row</button>
+      <button id="plus-row-btn" class="btn"><i class="fa-solid fa-plus"></i>   row</button>
     </div>
   </div>
 
   <button id="sd" class="btn">show data</button>
   <div id="chart-buttons">
-    <button class="draw-chart-btn btn" id="pie-chart-btn">show Pie Chart</button>
-    <button class="draw-chart-btn btn" id="col-chart-btn">show Column Chart</button>
-    <button class="draw-chart-btn btn" id="bar-chart-btn">show Bar Chart</button>
+    <button class="draw-chart-btn btn" id="pie-chart-btn">Pie Chart <i class="fa-solid fa-chart-pie"></i></button>
+    <button class="draw-chart-btn btn" id="col-chart-btn">Column Chart <i class="fa-solid fa-chart-column"></i></button>
+    <button class="draw-chart-btn btn" id="bar-chart-btn">Bar Chart <i class="fa-solid fa-chart-bar"></i></button>
   </div>
 
   <div id="chart-div"></div>
 
+  <!-- Font Awesome Kit -->
+  <script src="https://kit.fontawesome.com/9b66f789df.js" crossorigin="anonymous"></script>
+  <!-- JS -->
   <script src="assets/js/script.js" type="text/javascript"></script>
 </body>
 

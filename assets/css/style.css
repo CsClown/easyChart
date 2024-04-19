@@ -120,16 +120,33 @@ h1 {
   justify-content: space-around;
 }
 
+#plus-row-btn > .fa-plus {
+  font-size: 70%;
+}
+
+#plus-row-btn {
+  letter-spacing: 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  padding: 10px;
+}
+
 #chart-div {
   /* width: 500px;
   height: 500px; */
   background-color: var(--main-color);
 }
 
+.fa-solid {
+  font-size: 200%;
+}
+
 
 /* relic */
 #sd {
-  /*display: none;*/
+  display: none;
   background-color: var(--main-color);
   margin: 20px;
   width: 250px;
