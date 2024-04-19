@@ -64,7 +64,7 @@ plusBtn.addEventListener("click", function () {
   newRow.classList.add("row");
   newRow.innerHTML = `
         <input type="text" name="name" class="name text-input" />
-        <input type="text" name="value" class="value text-input" />
+        <input type="number" name="value" class="value text-input" />
     `;
   document.getElementsByTagName("ol")[0].appendChild(newRow);
 });
