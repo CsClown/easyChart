@@ -44,6 +44,11 @@ h1 {
   background-color: var(--main-color);
 }
 
+.draw-chart-btn {
+  margin: 20px;;
+  padding: 20px;
+}
+
 #main-heading {
   color: var(--main-color);
   letter-spacing: 0.3rem;
@@ -121,7 +126,10 @@ h1 {
   background-color: var(--main-color);
 }
 
+
+/* relic */
 #sd {
+  /*display: none;*/
   background-color: var(--main-color);
   margin: 20px;
   width: 250px;

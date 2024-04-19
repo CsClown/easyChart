@@ -79,6 +79,7 @@ function removeSpecificRow(event) {
   index = listItems.indexOf(removeListItem);
   dataSet.splice(index, 1);
   removeListItem.remove();
+  
 }
 
 /* row adder */
@@ -113,15 +114,6 @@ function removeRow() {
 
 }
 
-let minusBtn = document.getElementById("minus-row-btn");
-
-minusBtn.addEventListener("click", function () {
-  let rows = document.getElementsByClassName("row");
-  if (rows.length >= 1) {
-    rows[rows.length - 1].remove();
-  }
-});
-
 /* create the data array */
 
 
@@ -140,13 +132,37 @@ function fetchRow(rowNumber) {
   return [nameData, valueData];
 }
 
+//relic
 let showData = document.getElementById("sd");
 showData.addEventListener("click", function () {
   dataSet = [];
   createDataSet(allRows);
   // giveFeedback();
-  drawChart();
+  drawChart('pie');
 });
+
+/* choosing the chart type */
+let drawChartBtn = document.getElementsByClassName('draw-chart-btn');
+for ( i = 0; i < drawChartBtn.length; i++) {
+  drawChartBtn[i].addEventListener('click', function(event) {
+    if (event.target.id === 'pie-chart-btn') {
+      dataSet = [];
+      createDataSet(allRows);
+      drawChart('pie');
+    } else if (event.target.id === 'col-chart-btn') {
+      dataSet = [];
+      createDataSet(allRows);
+      drawChart('col');
+    } else if (event.target.id === 'bar-chart-btn') {
+      dataSet = [];
+      createDataSet(allRows);
+      drawChart('bar');
+    }
+  });
+
+}
+
+
 
 /* dev-div "feedback" for outputting stuff */
 function giveFeedback() {
@@ -158,7 +174,7 @@ function giveFeedback() {
 
 /* setting the chart (customized code snippets from developers.google.com) */
 
-function drawChart() {
+function drawChart(chartType) {
   var data = new google.visualization.DataTable();
 
   data.addColumn("string", "Topping");
@@ -167,8 +183,19 @@ function drawChart() {
 
   var options = { title: title, width: 400, height: 300 };
 
-  var chart = new google.visualization.PieChart(
-    document.getElementById("chart-div")
-  );
+  if (chartType === 'pie') {
+    var chart = new google.visualization.PieChart(
+      document.getElementById("chart-div")
+    );
+  } else if (chartType === 'col') {
+    var chart = new google.visualization.ColumnChart(
+      document.getElementById("chart-div")
+    );
+  } else if (chartType === 'bar') {
+    var chart = new google.visualization.BarChart(
+      document.getElementById("chart-div")
+    );
+  }
+  
   chart.draw(data, options);
 }
