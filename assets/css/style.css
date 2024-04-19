@@ -1,18 +1,17 @@
 :root {
-  --main-color: #D5FFF1;
-  --off-color: #A0C8BB;
-  --third-color: #6D9487;
+  --main-color: #d5fff1;
+  --off-color: #a0c8bb;
+  --third-color: #6d9487;
   --border-radius: 4px;
   --main-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 html {
-  background-color: #2F4858;
+  background-color: #2f4858;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 body {
@@ -20,7 +19,6 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: "Poppins", sans-serif;
-  
 }
 
 .btn {
@@ -29,7 +27,6 @@ body {
   border-radius: var(--border-radius);
   background-color: var(--main-color);
 }
-
 
 #main-heading {
   color: var(--main-color);
@@ -51,6 +48,23 @@ body {
   height: 20px;
   border-radius: var(--border-radius);
 }
+#set-title-div {
+  display: flex;
+  align-items: center;
+}
+
+#set-title-div > span {
+  margin: 10px;
+}
+
+#set-title {
+  margin: 10px;
+}
+
+#rename-btn {
+  padding: 5px;
+  margin: 10px;
+}
 
 .text-input {
   border-radius: var(--border-radius);
@@ -70,7 +84,6 @@ body {
 }
 
 #data-setter div {
-  
   padding: 20px;
 }
 
@@ -80,7 +93,6 @@ body {
 }
 
 #value-heading {
-  
   display: inline-block;
 }
 
@@ -105,10 +117,8 @@ body {
 }
 
 #sd {
-  
   background-color: var(--main-color);
   margin: 20px;
   width: 250px;
   height: 50px;
-  
 }
