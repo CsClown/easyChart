@@ -82,6 +82,7 @@ strong {
   align-items: center;
   margin-top: var(--small-margin);
   padding: 10px;
+  width: 286.41px;
 }
 
 #title-setter .text-input {
@@ -221,11 +222,12 @@ strong {
   #title-setter {
     display: flex;
     align-items: center;
-    background-color: var(--third-color);
+    
     border-radius: var(--border-radius);
     box-shadow: var(--main-shadow);
     margin-top: 30px;
     padding: 20px 30px;
+    width: 526.41px;
   }
 
   .text-input {
