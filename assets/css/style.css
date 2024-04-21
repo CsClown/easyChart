@@ -35,6 +35,8 @@ body {
   font-size: 300%;
 }
 
+
+
 p {
   text-align: center;
   margin: 0px 20px;
@@ -48,8 +50,7 @@ strong {
 }
 
 #set-title {
-  margin: 0px 20px;
-  padding: 10px 20px;
+  padding: 0px 0px;
   
 }
 

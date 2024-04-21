@@ -16,10 +16,12 @@ let title = "generic chart";
 
 function titleSwitch() {
   title = document.getElementById("title-input").value;
-  document.getElementById("title-setter").innerHTML = `
-                  <span>Chart title:  </span>
+  titleDiv = document.getElementById("title-setter");
+  titleDiv.innerHTML = `
+                  <label for="set-title">title <i class="fa-solid fa-file-signature"></i></label>
                   <h2 id="set-title">"<strong>${title}</strong>"</h2>
                   `;
+  
   let renameBtn = document.createElement("button");
   renameBtn.textContent = "rename";
   renameBtn.classList = "btn";
