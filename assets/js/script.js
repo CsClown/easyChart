@@ -6,7 +6,7 @@ google.charts.load("current", { packages: ["corechart"] });
 let dataSet = [];
 /* setting the title of the chart */
 
-/* setting EventListener on button-parent because on button it gets lost on DOM change */
+/* setting EventListener on "button-parent" because on "button" it gets lost on DOM change */
 let titleSetter = document.getElementById("title-setter");
 titleSetter.addEventListener("click", function (event) {
   if (event.target.matches("#title-submit-btn")) {
@@ -150,20 +150,23 @@ for (i = 0; i < drawChartBtn.length; i++) {
     if (event.target.id === "pie-chart-btn") {
       dataSet = [];
       createDataSet(allRows);
-      drawChart("pie");
+      //drawChart("pie");
+      drawJsChart('pie');
     } else if (event.target.id === "col-chart-btn") {
       dataSet = [];
       createDataSet(allRows);
-      drawChart("col");
+      //drawChart("col");
+      drawJsChart('line');
     } else if (event.target.id === "bar-chart-btn") {
       dataSet = [];
       createDataSet(allRows);
-      drawChart("bar");
+      //drawChart("bar");
+      drawJsChart('bar');
 
       // Draw Example-Chart
     } else if (event.target.id === "example-chart-btn") {
       dataSet = setExample();
-      drawChart("pie");
+      drawJsChart("pie");
     }
   });
 }
@@ -174,7 +177,7 @@ function giveFeedback() {
   console.log(dataSet);
 }
 
-/* ChARTING */
+/* CHARTING */
 
 /* setting the chart (customized code snippets from developers.google.com) */
 
@@ -209,34 +212,55 @@ function drawChart(chartType) {
   });
 }
 
-/* Landscape Orientation for mobile (code mostly from chatGPT) */
-if ('orientation' in screen) {
-  let chartDiv = document.getElementById('chart-div');
-  let observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        screen.orientation.lock('landscape-primary')
-        .then(() => {
-          console.log('Orientation locked to landscape');
-        })
-        .catch((error) => {
-          console.error('Failed to lock orientation: ', error);
-        });
-      } else {
-        screen.orientation.unlock()
-          .then(() => {
-            console.log('Orientation unlocked');
-          })
-          .catch((error) => {
-            console.error('Failed to unlock orientation: ', error);
-          });
-        }
-    })
-  });
-  
-  observer.observe(chartDiv);
-} else {
-    console.error('Screen Orientation API not supported');
-};
 
+
+
+let chartInstance = null;
+function drawJsChart(chartType) {
+  let jsChart = document.getElementById('js-chart');
+
+  // If theres an instance of a chart, destroy it
+  if (chartInstance != null) {
+    chartInstance.destroy();
+  }
+
+  chartInstance = new Chart(jsChart, {
+    type: chartType,
+    data: {
+      labels: dataSet.map(innerArray => innerArray[0]),
+      datasets: [{
+        data: dataSet.map(innerArray => innerArray[1]),
+        borderWidth: 1
+      }]
+    },
+    options: {
+      plugins: {
+        legend: {
+          display: false
+        },
+        title: {
+          display: true, 
+          text: title,
+          color: 'white',
+          font: {
+            size: 20
+          }
+        }
+        
+      
+      }
+      
+      
+      
+    }
+  });
+
+  // scroll into view
+  document.getElementById('js-chart').scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+    inline: 'nearest'
+  });
+
+}
 
