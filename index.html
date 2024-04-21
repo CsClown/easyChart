@@ -21,6 +21,7 @@
 
   <!-- ########### BODY ############# -->
   <body>
+    
     <!-- Heading -->
     <h1 id="main-heading">easyChart<i class="fa-solid fa-chart-simple"></i></h1>
     <hr>
@@ -41,8 +42,8 @@
     <div id="data-setter">
       
       <div>
-        <h3 id="name-heading">Name</h3>
-        <h3 id="value-heading">Value</h3>
+        <h3 id="name-heading">name</h3>
+        <h3 id="value-heading">value</h3>
         <ol id="row-list">
           <li class="row">
             <input type="text" name="name" class="name text-input" />
@@ -58,16 +59,16 @@
     <!-- Buttons to draw different types of charts -->
     <div id="chart-buttons">
       <button class="draw-chart-btn btn" id="pie-chart-btn">
-        Pie Chart <i class="fa-solid fa-chart-pie"></i>
+        pie chart <i class="fa-solid fa-chart-pie"></i>
       </button>
       <button class="draw-chart-btn btn" id="col-chart-btn">
-        Radar Chart <i class="fa-solid fa-satellite-dish"></i>
+        radar chart <i class="fa-solid fa-satellite-dish"></i>
       </button>
       <button class="draw-chart-btn btn" id="bar-chart-btn">
-        Bar Chart <i class="fa-solid fa-chart-column"></i>
+        bar chart <i class="fa-solid fa-chart-column"></i>
       </button>
       <button class="draw-chart-btn btn" id="example-chart-btn">
-        Example Data</i>
+        example data</i>
       </button>
     </div>
 
@@ -77,8 +78,11 @@
       <canvas id="js-chart"></canvas>
       <button id="save-chart-btn" class="btn"><strong><i class="fa-solid fa-download"></i> save as .jpg</strong></button>
     </div>
-
-    <footer id="footer">copyright <i class="fa-regular fa-copyright"></i> CsClown</footer>
+    
+    <footer id="footer">
+      <p>copyright <i class="fa-regular fa-copyright"></i> CsClown</p>
+    </footer>
+    
 
 
     <!-- Font Awesome Kit -->
@@ -89,4 +93,5 @@
     <!-- JS -->
     <script src="assets/js/script.js" type="text/javascript"></script>
   </body>
+  
 </html>
