@@ -10,7 +10,9 @@
   --big-margin: 40px;
 }
 html {
+  background: url('../images/background.jpg') no-repeat center center / cover;
   background-color: #2f4858;
+  min-height: 100vh;
 }
 
 * {
@@ -23,6 +25,7 @@ html {
 }
 
 body {
+  
   display: flex;
   flex-direction: column;
   align-items: center;
