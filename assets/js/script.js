@@ -155,6 +155,7 @@ let dataSetterContent = document.getElementById('data-setter').innerHTML;
 
 document.getElementById('data-setter').addEventListener('click', function(event){
   if (event.target.id === 'reset-data-setter-btn') {
+    document.getElementById('title-setter').style.display = 'flex';
     document.getElementById('data-setter').innerHTML = dataSetterContent;
     dataSet= [];
     chartInstance.destroy();
@@ -165,7 +166,6 @@ document.getElementById('data-setter').addEventListener('click', function(event)
 
 function switchDataSetter() {
   let newContent = document.getElementById('data-setter');
-  
   newContent.innerHTML = '<button id="reset-data-setter-btn" class="btn centered-btn">create own data set</button>';
 }
 
@@ -207,6 +207,7 @@ for (i = 0; i < drawChartBtn.length; i++) {
       // Draw Example-Chart
     } else if (event.target.id === "example-chart-btn") {
       switchDataSetter();
+      document.getElementById('title-setter').style.display = 'none';
       dataSet = setExample();
       drawJsChart("pie");
     }
