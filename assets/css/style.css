@@ -41,6 +41,12 @@ p {
   color: white;
 }
 
+strong {
+  text-shadow: #ffffff76 0px 0px 2px;
+  font-weight: 400;
+
+}
+
 #set-title {
   margin: 0px 20px;
   padding: 10px 20px;
