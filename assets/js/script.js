@@ -25,16 +25,18 @@ titleSetter.addEventListener("click", function (event) {
 titleSetter.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
       let titleInput = document.getElementById('title-input');
-    if (titleInput && titleInput.value.trim() !== "") {
-      titleSwitch();
-    } else if (!document.querySelector('#title-setter .alert')) {
-      let titleAlert = document.createElement('p');
-      titleAlert.classList= "alert";
-      titleAlert.textContent= 'please give the poor chart a nice name..';
-      titleSetter.appendChild(titleAlert);
+    
+      if (titleInput && titleInput.value.trim() !== "") {
+        titleSwitch();
+      } else if (!document.querySelector('#title-setter .alert')) {
+        let titleAlert = document.createElement('p');
+        titleAlert.classList= "alert";
+        titleAlert.textContent= 'please give the poor chart a nice name..';
+        titleSetter.appendChild(titleAlert);
+      }
     }
-    }
-  });
+});
+
 
 
 
@@ -65,7 +67,16 @@ function titleSwitch() {
       .getElementById("title-input")
       .addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
-          titleSwitch();
+          let titleInput = document.getElementById('title-input');
+    
+          if (titleInput && titleInput.value.trim() !== "") {
+            titleSwitch();
+          } else if (!document.querySelector('#title-setter .alert')) {
+            let titleAlert = document.createElement('p');
+            titleAlert.classList= "alert";
+            titleAlert.textContent= 'please give the poor chart a nice name..';
+            titleSetter.appendChild(titleAlert);
+          }
         }
       });
   });
@@ -120,6 +131,32 @@ dataSetter.addEventListener("click", function (event) {
 
   
 });
+
+dataSetter.addEventListener('keydown', function(event){
+  if (event.key === 'Enter') {
+    let checkBtn = document.querySelector(".remove-row-btn");
+    if (!checkBtn) {
+      let firstRowBtn = document.createElement("button");
+      firstRowBtn.classList = "remove-row-btn btn";
+      firstRowBtn.innerText = "- row";
+      let firstRow = document.querySelector("ol li");
+      if (firstRow) {
+        firstRow.appendChild(firstRowBtn);
+      }
+    }
+  
+    let newRow = document.createElement("li");
+    newRow.classList.add("row");
+    newRow.innerHTML = `
+          <input type="text" name="name" class="name text-input" />
+          <input type="number" name="value" class="value text-input" />
+          <button class='remove-row-btn btn'>- row</button>
+      `;
+    document.getElementsByTagName("ol")[0].appendChild(newRow);
+  
+
+  }
+})
 
 // Removes a specific row from the Data Set by navigation through the
 // DOM via closest <li> item and fetching its index from its parent <ol>
@@ -179,6 +216,7 @@ document.getElementById('data-setter').addEventListener('click', function(event)
     dataSet= [];
     chartInstance.destroy();
     document.getElementById('canvas-div').style.display = 'none';
+    document.getElementById('rename-btn').click();
     let buttons = document.querySelectorAll('.btn');
     buttons.forEach(button => {button.classList.remove('active');})
 
