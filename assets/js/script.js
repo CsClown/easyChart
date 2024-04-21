@@ -1,8 +1,4 @@
-/* loading google charts */
-google.charts.load("current", {
-  packages: ["corechart"]
-});
-// google.charts.setOnLoadCallback(drawChart);
+
 
 /* initializing the DataSet */
 let dataSet = [];
