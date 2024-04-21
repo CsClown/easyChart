@@ -192,6 +192,13 @@ strong {
   font-size: 100%;
 }
 
+#canvas-div {
+  width: 80%;
+}
+#js-chart {
+ 
+}
+
 @media screen and (min-width: 768px) {
   #main-heading {
     font-weight: 200;
