@@ -50,8 +50,7 @@ strong {
 #set-title {
   margin: 0px 20px;
   padding: 10px 20px;
-  background-color: var(--off-color);
-  border-radius: var(--border-radius);
+  
 }
 
 .btn {

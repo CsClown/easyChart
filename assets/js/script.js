@@ -22,7 +22,7 @@ function titleSwitch() {
   title = document.getElementById("title-input").value;
   document.getElementById("title-setter").innerHTML = `
                   <span>Chart title:  </span>
-                  <h4 id="set-title">"${title}"</h4>
+                  <h4 id="set-title">"<strong>${title}</strong>"</h4>
                   `;
   let renameBtn = document.createElement("button");
   renameBtn.textContent = "rename";
@@ -65,8 +65,8 @@ document
 let plusBtn = document.getElementById("plus-row-btn");
 let dataSetter = document.getElementById("data-setter");
 
-// remove
 dataSetter.addEventListener("click", function (event) {
+  //remove row
   if (event.target.matches(".remove-row-btn")) {
     if (document.getElementsByClassName('remove-row-btn').length === 2) {
       removeSpecificRow(event);
@@ -74,9 +74,10 @@ dataSetter.addEventListener("click", function (event) {
     } else {
       removeSpecificRow(event);
     }
-    //careful: new code due to dom change event issues
+
+  //add row
   } else if (event.target.matches('#plus-row-btn')){
-    // checking if theres already a button next to first list item
+    // checking if theres already a -row button next to first list item
     // then appending it and creating a new row
     let checkBtn = document.querySelector(".remove-row-btn");
     if (!checkBtn) {
@@ -115,30 +116,6 @@ function removeSpecificRow(event) {
   removeListItem.remove();
 }
 
-// /* row adder */
-// plusBtn.addEventListener("click", function () {
-//   // checking if theres already a button next to first list item
-//   // then appending it and creating a new row
-//   let checkBtn = document.querySelector(".remove-row-btn");
-//   if (!checkBtn) {
-//     let firstRowBtn = document.createElement("button");
-//     firstRowBtn.classList = "remove-row-btn btn";
-//     firstRowBtn.innerText = "- row";
-//     let firstRow = document.querySelector("ol li");
-//     if (firstRow) {
-//       firstRow.appendChild(firstRowBtn);
-//     }
-//   }
-
-//   let newRow = document.createElement("li");
-//   newRow.classList.add("row");
-//   newRow.innerHTML = `
-//         <input type="text" name="name" class="name text-input" />
-//         <input type="number" name="value" class="value text-input" />
-//         <button class='remove-row-btn btn'>- row</button>
-//     `;
-//   document.getElementsByTagName("ol")[0].appendChild(newRow);
-// });
 
 
 /* create the data array */
