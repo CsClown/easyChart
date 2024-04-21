@@ -237,6 +237,7 @@ strong {
 
   #data-setter {
     margin-top: var(--big-margin);
+    margin-bottom: var(--small-margin);
     padding: 20px;
   }
 
