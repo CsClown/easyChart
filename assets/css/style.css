@@ -191,9 +191,7 @@ strong {
   background-color: #d1ed8d;
 }
 
-#chart-div {
-  background-color: var(--main-color);
-}
+
 
 .fa-solid {
   font-size: 100%;
@@ -208,7 +206,7 @@ strong {
   border-radius: var(--border-radius);
 }
 #js-chart {
- 
+ max-height: 600px;
 }
 
 #save-chart-btn {

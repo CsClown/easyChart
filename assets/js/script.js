@@ -165,6 +165,7 @@ document.getElementById('data-setter').addEventListener('click', function(event)
 
 function switchDataSetter() {
   let newContent = document.getElementById('data-setter');
+  
   newContent.innerHTML = '<button id="reset-data-setter-btn" class="btn centered-btn">create own data set</button>';
 }
 
@@ -251,6 +252,8 @@ function drawJsChart(chartType) {
       }]
     },
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         legend: {
           display: displayLegend,
