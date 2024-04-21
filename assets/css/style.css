@@ -46,7 +46,7 @@ div {
   color: var(--third-color);
   letter-spacing: 0.3rem;
   margin: 20px;
-  text-shadow: #00000076 0px 0px 2px;
+  text-shadow: #00000076 0px 0px 1px;
 
 }
 
@@ -272,6 +272,7 @@ footer p {
   #main-heading {
     font-weight: 200;
     font-size: 600%;
+    text-shadow: #00000076 0px 0px 2px;
   }
   #title-setter {
     display: flex;
