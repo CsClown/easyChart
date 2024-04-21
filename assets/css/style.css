@@ -199,16 +199,18 @@ strong {
 
 #canvas-div {
   display:none;
-  padding: 40px;
+  flex-direction: column;
+  align-self: center;
+  padding: 20px;
   margin-bottom: 20px;
   height: 400px;
   width: 400px;
-  max-width: 600px;
+  max-width: 90vw;
   background-color: var(--off-color);
   border-radius: var(--border-radius);
 }
 #js-chart {
- 
+ margin-bottom: 40px;
 }
 
 #save-chart-btn {
@@ -265,6 +267,13 @@ footer {
   }
   .draw-chart-btn {
     padding: 20px;
+  }
+
+  #canvas-div {
+    width: 90vw;
+    max-width: 800px;
+    height: 60vh;
+    max-height: 800px;
   }
   .fa-solid {
     font-size: 200%;

@@ -227,7 +227,7 @@ function giveFeedback() {
 let chartInstance = null;
 
 function drawJsChart(chartType) {
-  document.getElementById('canvas-div').style.display = 'block';
+  document.getElementById('canvas-div').style.display = 'flex';
   let jsChart = document.getElementById('js-chart');
 
   // If theres an instance of a chart, destroy it
@@ -235,7 +235,7 @@ function drawJsChart(chartType) {
     chartInstance.destroy();
   }
 
-  // Display legend switch for pie chart
+  // I want the Legend to show only on the pie chart
   let displayLegend = false;
   if (chartType === 'pie') {
     displayLegend = true;
