@@ -145,7 +145,7 @@ let exampleSet = [
 ];
 
 function setExample() {
-  title = 'Time spend';
+  title = 'Time spent';
   dataSet = exampleSet;
   return (dataSet);
 }
@@ -179,7 +179,7 @@ for (i = 0; i < drawChartBtn.length; i++) {
         drawJsChart('pie');
         return;
       }
-      if (title === 'Time spend') {title = 'generic chart'}
+      if (title === 'Time spent') {title = 'generic chart'}
       dataSet = [];
       createDataSet(allRows);
       drawJsChart('pie');
@@ -189,7 +189,7 @@ for (i = 0; i < drawChartBtn.length; i++) {
         drawJsChart('radar');
         return;
       }
-      if (title === 'Time spend') {title = 'generic chart'}
+      if (title === 'Time spent') {title = 'generic chart'}
       dataSet = [];
       createDataSet(allRows);
       drawJsChart('radar');
@@ -199,7 +199,7 @@ for (i = 0; i < drawChartBtn.length; i++) {
         drawJsChart('bar');
         return;
       }
-      if (title === 'Time spend') {title = 'generic chart'}
+      if (title === 'Time spent') {title = 'generic chart'}
       dataSet = [];
       createDataSet(allRows);
       drawJsChart('bar');
