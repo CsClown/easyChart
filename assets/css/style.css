@@ -145,6 +145,10 @@ strong {
   border-radius: var(--border-radius);
 }
 
+#reset-data-setter-btn {
+  padding: 20px;
+}
+
 /* + row button DIV */
 .btn-div {
   display: flex;
@@ -193,7 +197,7 @@ strong {
 }
 
 #canvas-div {
-  width: 80%;
+  
 }
 #js-chart {
  

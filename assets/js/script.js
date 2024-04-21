@@ -1,5 +1,7 @@
 /* loading google charts */
-google.charts.load("current", { packages: ["corechart"] });
+google.charts.load("current", {
+  packages: ["corechart"]
+});
 // google.charts.setOnLoadCallback(drawChart);
 
 /* initializing the DataSet */
@@ -65,7 +67,7 @@ let dataSetter = document.getElementById("data-setter");
 
 dataSetter.addEventListener("click", function (event) {
   if (event.target.matches(".remove-row-btn")) {
-    if (document.getElementsByClassName('remove-row-btn').length === 2){
+    if (document.getElementsByClassName('remove-row-btn').length === 2) {
       removeSpecificRow(event);
       document.getElementsByClassName('remove-row-btn')[0].remove();
     } else {
@@ -121,6 +123,7 @@ function createDataSet(rows) {
     dataSet.push(fetchRow(row));
   }
 }
+
 function fetchRow(rowNumber) {
   let nameData = document.getElementsByClassName("name")[rowNumber].value;
   let valueData = parseInt(
@@ -131,40 +134,75 @@ function fetchRow(rowNumber) {
 
 
 // Set DataSet Example
+let exampleSet = [
+  ["Styling", 3],
+  ["HTML", 1],
+  ["Procrasti-mating", 0.5],
+  ["Research", 3],
+  ["JS", 2],
+];
+
 function setExample() {
   title = 'Time spend';
-  dataSet = [
-    ["Styling", 3],
-    ["HTML", 1],
-    ["Procrasti-mating", 0.5],
-    ["Research", 3],
-    ["JS", 2],
-  ];
-  return(dataSet);
+  dataSet = exampleSet;
+  return (dataSet);
 }
 
-/* choosing the chart type */
+//switch the data setter div if example chart is clicked
+let dataSetterContent = document.getElementById('data-setter').innerHTML;
+
+document.getElementById('data-setter').addEventListener('click', function(event){
+  if (event.target.id === 'reset-data-setter-btn') {
+    document.getElementById('data-setter').innerHTML = dataSetterContent;
+    dataSet= [];
+    chartInstance.destroy();
+
+  }
+})
+
+function switchDataSetter() {
+  let newContent = document.getElementById('data-setter');
+  newContent.innerHTML = '<button id="reset-data-setter-btn" class="btn centered-btn">create own data set</button>';
+}
+
+/* choosing the chart type and executing draw*/
 let drawChartBtn = document.getElementsByClassName("draw-chart-btn");
 for (i = 0; i < drawChartBtn.length; i++) {
   drawChartBtn[i].addEventListener("click", function (event) {
+
     if (event.target.id === "pie-chart-btn") {
+      if (dataSet === exampleSet) {
+        drawJsChart('pie');
+        return;
+      }
+      if (title === 'Time spend') {title = 'generic chart'}
       dataSet = [];
       createDataSet(allRows);
-      //drawChart("pie");
       drawJsChart('pie');
+
     } else if (event.target.id === "col-chart-btn") {
+      if (dataSet === exampleSet) {
+        drawJsChart('radar');
+        return;
+      }
+      if (title === 'Time spend') {title = 'generic chart'}
       dataSet = [];
       createDataSet(allRows);
-      //drawChart("col");
-      drawJsChart('line');
+      drawJsChart('radar');
+
     } else if (event.target.id === "bar-chart-btn") {
+      if (dataSet === exampleSet) {
+        drawJsChart('bar');
+        return;
+      }
+      if (title === 'Time spend') {title = 'generic chart'}
       dataSet = [];
       createDataSet(allRows);
-      //drawChart("bar");
       drawJsChart('bar');
 
       // Draw Example-Chart
     } else if (event.target.id === "example-chart-btn") {
+      switchDataSetter();
       dataSet = setExample();
       drawJsChart("pie");
     }
@@ -179,43 +217,11 @@ function giveFeedback() {
 
 /* CHARTING */
 
-/* setting the chart (customized code snippets from developers.google.com) */
-
-function drawChart(chartType) {
-  var data = new google.visualization.DataTable();
-
-  data.addColumn("string", "Item");
-  data.addColumn("number", "Amount");
-  data.addRows(dataSet);
-
-  var options = { title: title, width: 800, height: 400 };
-
-  if (chartType === "pie") {
-    var chart = new google.visualization.PieChart(
-      document.getElementById("chart-div")
-    );
-  } else if (chartType === "col") {
-    var chart = new google.visualization.ColumnChart(
-      document.getElementById("chart-div")
-    );
-  } else if (chartType === "bar") {
-    var chart = new google.visualization.BarChart(
-      document.getElementById("chart-div")
-    );
-  }
-
-  chart.draw(data, options);
-  document.getElementById('chart-div').scrollIntoView({
-    behavior: 'smooth',
-    block: 'start',
-    inline: 'nearest'
-  });
-}
-
-
+/* setting the chart (customized code snippets from chartJS.org) */
 
 
 let chartInstance = null;
+
 function drawJsChart(chartType) {
   let jsChart = document.getElementById('js-chart');
 
@@ -224,6 +230,13 @@ function drawJsChart(chartType) {
     chartInstance.destroy();
   }
 
+  // Display legend switch for pie chart
+  let displayLegend = false;
+  if (chartType === 'pie') {
+    displayLegend = true;
+  }
+
+  //Building the chart
   chartInstance = new Chart(jsChart, {
     type: chartType,
     data: {
@@ -236,22 +249,20 @@ function drawJsChart(chartType) {
     options: {
       plugins: {
         legend: {
-          display: false
+          display: displayLegend,
+          labels: {
+            color: 'white'
+          }
         },
         title: {
-          display: true, 
+          display: true,
           text: title,
           color: 'white',
           font: {
             size: 20
           }
         }
-        
-      
       }
-      
-      
-      
     }
   });
 
@@ -263,4 +274,3 @@ function drawJsChart(chartType) {
   });
 
 }
-
