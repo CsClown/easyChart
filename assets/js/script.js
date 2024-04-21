@@ -252,7 +252,7 @@ function drawJsChart(chartType) {
       }]
     },
     options: {
-      responsive: true,
+      
       maintainAspectRatio: false,
       plugins: {
         legend: {
