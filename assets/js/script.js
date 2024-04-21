@@ -115,7 +115,7 @@ dataSetter.addEventListener("click", function (event) {
       let firstRow = document.querySelector("ol li");
       if (firstRow) {
         firstRow.appendChild(firstRowBtn);
-      }
+      }   
     }
   
     let newRow = document.createElement("li");
@@ -126,8 +126,11 @@ dataSetter.addEventListener("click", function (event) {
           <button class='remove-row-btn btn'>- row</button>
       `;
     document.getElementsByTagName("ol")[0].appendChild(newRow);
+
+    //focus() doesnt work and i dont know why
+    document.getElementById('plus-row-btn').focus(); 
   }
-    
+   
 
   
 });
@@ -265,6 +268,7 @@ for (i = 0; i < drawChartBtn.length; i++) {
 
       // Draw Example-Chart
     } else if (event.target.id === "example-chart-btn") {
+      if (dataSet === exampleSet) { return; }
       switchDataSetter();
       document.getElementById('title-setter').style.display = 'none';
       dataSet = setExample();
