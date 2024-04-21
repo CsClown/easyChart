@@ -3,16 +3,40 @@
 /* initializing the DataSet */
 let dataSet = [];
 /* setting the title of the chart */
+let title = "generic chart";
 
 /* setting EventListener on "button-parent" because on "button" it gets lost on DOM change */
 let titleSetter = document.getElementById("title-setter");
 titleSetter.addEventListener("click", function (event) {
   if (event.target.matches("#title-submit-btn")) {
-    titleSwitch();
-  }
+    let titleInput = document.getElementById('title-input');
+    if (titleInput && titleInput.value.trim() !== "") {
+      titleSwitch();
+    } else if (!document.querySelector('#title-setter .alert')) {
+      let titleAlert = document.createElement('p');
+      titleAlert.classList= "alert";
+      titleAlert.textContent= 'please give the poor chart a nice name..';
+      titleSetter.appendChild(titleAlert);
+    }
+  } 
 });
 
-let title = "generic chart";
+/* *Enter* */
+titleSetter.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+      let titleInput = document.getElementById('title-input');
+    if (titleInput && titleInput.value.trim() !== "") {
+      titleSwitch();
+    } else if (!document.querySelector('#title-setter .alert')) {
+      let titleAlert = document.createElement('p');
+      titleAlert.classList= "alert";
+      titleAlert.textContent= 'please give the poor chart a nice name..';
+      titleSetter.appendChild(titleAlert);
+    }
+    }
+  });
+
+
 
 function titleSwitch() {
   title = document.getElementById("title-input").value;
@@ -47,16 +71,11 @@ function titleSwitch() {
   });
 }
 
-/* *click* */
 
-/* *Enter* */
-document
-  .getElementById("title-input")
-  .addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      titleSwitch();
-    }
-  });
+
+
+
+
 
 /* Adding and removing rows of the data set */
 
@@ -160,6 +179,8 @@ document.getElementById('data-setter').addEventListener('click', function(event)
     dataSet= [];
     chartInstance.destroy();
     document.getElementById('canvas-div').style.display = 'none';
+    let buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {button.classList.remove('active');})
 
   }
 })
@@ -210,15 +231,12 @@ for (i = 0; i < drawChartBtn.length; i++) {
       document.getElementById('title-setter').style.display = 'none';
       dataSet = setExample();
       drawJsChart("pie");
+      
     }
   });
 }
 
-/* dev-div "feedback" for outputting stuff */
-function giveFeedback() {
-  document.getElementById("feedback").innerText = "Data Set: " + dataSet;
-  console.log(dataSet);
-}
+
 
 /* CHARTING */
 
@@ -228,6 +246,20 @@ function giveFeedback() {
 let chartInstance = null;
 
 function drawJsChart(chartType) {
+
+  //first indicate active chart on corresponding button
+  let buttons = document.querySelectorAll('.btn');
+  buttons.forEach(button => {button.classList.remove('active');})
+
+  if (chartType === 'pie') {
+      document.getElementById('pie-chart-btn').classList.add('active');
+  } else if (chartType === 'radar') {
+    document.getElementById('col-chart-btn').classList.add('active');
+
+    } else if (chartType === 'bar') { 
+    document.getElementById('bar-chart-btn').classList.add('active');
+    }
+
   document.getElementById('canvas-div').style.display = 'flex';
   let jsChart = document.getElementById('js-chart');
 
