@@ -197,11 +197,19 @@ strong {
 }
 
 #canvas-div {
+  display:none;
+  padding: 40px;
   width: 80%;
   max-width: 600px;
+  background-color: var(--off-color);
+  border-radius: var(--border-radius);
 }
 #js-chart {
  
+}
+
+#save-chart-btn {
+  padding: 5px 10px;
 }
 
 @media screen and (min-width: 768px) {

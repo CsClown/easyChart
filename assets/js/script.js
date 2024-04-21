@@ -156,6 +156,7 @@ document.getElementById('data-setter').addEventListener('click', function(event)
     document.getElementById('data-setter').innerHTML = dataSetterContent;
     dataSet= [];
     chartInstance.destroy();
+    document.getElementById('canvas-div').style.display = 'none';
 
   }
 })
@@ -223,6 +224,7 @@ function giveFeedback() {
 let chartInstance = null;
 
 function drawJsChart(chartType) {
+  document.getElementById('canvas-div').style.display = 'block';
   let jsChart = document.getElementById('js-chart');
 
   // If theres an instance of a chart, destroy it
@@ -273,4 +275,21 @@ function drawJsChart(chartType) {
     inline: 'nearest'
   });
 
+}
+
+//downloading the chart as Jpg
+let downloadBtn = document.getElementById('save-chart-btn');
+downloadBtn.addEventListener('click', downloadChart);
+
+function downloadChart() {
+  let canvas = document.getElementById('js-chart');
+  let dataURL = canvas.toDataURL('image/jpg');
+
+  let link = document.createElement('a');
+  link.href = dataURL;
+
+  //Replace empty spaces in the title with underscore
+  let newTitle = title.replace(/\s/g, '_');
+  link.download = `${newTitle}_easyChart.jpg`;
+  link.click();
 }
