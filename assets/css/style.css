@@ -10,7 +10,7 @@
   --big-margin: 40px;
 }
 html {
-  background: url('../images/background.jpg') no-repeat center center / cover;
+  background: url("../images/background.jpg") no-repeat center center / cover;
   background-color: #2f4858;
   min-height: 100vh;
 }
@@ -31,9 +31,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Poppins", sans-serif;
-  
-  
+  font-family: "Jost", sans-serif;
 }
 
 div {
@@ -47,7 +45,6 @@ div {
   letter-spacing: 0.3rem;
   margin: 20px;
   text-shadow: #00000076 0px 0px 1px;
-
 }
 
 hr {
@@ -55,8 +52,6 @@ hr {
   border: 1px solid var(--third-color);
   margin-bottom: 20px;
 }
-
-
 
 p {
   text-align: center;
@@ -67,12 +62,10 @@ p {
 strong {
   text-shadow: #ffffff76 0px 0px 2px;
   font-weight: 400;
-
 }
 
 #set-title {
   padding: 0px 0px;
-  
 }
 
 .alert {
@@ -96,8 +89,6 @@ strong {
   background-color: rgba(255, 0, 0, 0.395);
   box-shadow: white 0px 0px 4px;
 }
-
-
 
 #title-setter {
   box-shadow: var(--main-shadow);
@@ -134,13 +125,10 @@ strong {
   padding: 20px;
 }
 
-
-
 #title-submit-btn {
   font-size: 50%;
   padding: 2px 20px;
   border-radius: var(--border-radius);
-  
 }
 
 #rename-btn {
@@ -163,7 +151,7 @@ strong {
 #value-heading {
   position: relative;
   display: inline-block;
-  left: 95px;
+  left: 105px;
 }
 
 #data-setter button {
@@ -231,15 +219,12 @@ strong {
   box-shadow: white 0px 0px 4px;
 }
 
-
-
-
 .fa-solid {
   font-size: 100%;
 }
 
 #canvas-div {
-  display:none;
+  display: none;
   flex-direction: column;
   align-self: center;
   padding: 20px;
@@ -251,7 +236,7 @@ strong {
   border-radius: var(--border-radius);
 }
 #js-chart {
- margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 #save-chart-btn {
@@ -262,7 +247,6 @@ footer {
   margin-top: 40px;
   bottom: 0px;
   margin-bottom: 20px;
-  
 }
 footer p {
   font-size: smaller;
@@ -277,7 +261,7 @@ footer p {
   #title-setter {
     display: flex;
     align-items: center;
-    
+
     border-radius: var(--border-radius);
     box-shadow: var(--main-shadow);
     margin-top: 30px;
@@ -297,9 +281,8 @@ footer p {
   }
 
   #value-heading {
-    left: 330px;
+    left: 340px;
   }
-
 
   #plus-row-btn {
     letter-spacing: 0.2rem;

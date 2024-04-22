@@ -1,45 +1,51 @@
-
-
 /* initializing the DataSet */
 let dataSet = [];
 /* setting the title of the chart */
 let title = "generic chart";
 
+//focus on title input
+window.onload = function () {
+  document.getElementById("title-input").focus();
+};
+
 /* setting EventListener on "button-parent" because on "button" it gets lost on DOM change */
 let titleSetter = document.getElementById("title-setter");
+
+/* *click* */
 titleSetter.addEventListener("click", function (event) {
   if (event.target.matches("#title-submit-btn")) {
-    let titleInput = document.getElementById('title-input');
+    let titleInput = document.getElementById("title-input");
     if (titleInput && titleInput.value.trim() !== "") {
       titleSwitch();
-    } else if (!document.querySelector('#title-setter .alert')) {
-      let titleAlert = document.createElement('p');
-      titleAlert.classList= "alert";
-      titleAlert.textContent= 'please give the poor chart a nice name..';
-      titleSetter.appendChild(titleAlert);
+    } else {
     }
-  } 
+    //   else if (!document.querySelector("#title-setter .alert")) {
+    //   let titleAlert = document.createElement("p");
+    //   titleAlert.classList = "alert";
+    //   titleAlert.textContent = "please give the poor chart a nice name..";
+    //   titleSetter.appendChild(titleAlert);
+    // }
+  }
 });
 
 /* *Enter* */
 titleSetter.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-      let titleInput = document.getElementById('title-input');
-    
-      if (titleInput && titleInput.value.trim() !== "") {
-        titleSwitch();
-      } else if (!document.querySelector('#title-setter .alert')) {
-        let titleAlert = document.createElement('p');
-        titleAlert.classList= "alert";
-        titleAlert.textContent= 'please give the poor chart a nice name..';
-        titleSetter.appendChild(titleAlert);
-      }
+  if (event.key === "Enter") {
+    let titleInput = document.getElementById("title-input");
+
+    if (titleInput && titleInput.value.trim() !== "") {
+      titleSwitch();
     }
+    //   else if (!document.querySelector("#title-setter .alert")) {
+    //   let titleAlert = document.createElement("p");
+    //   titleAlert.classList = "alert";
+    //   titleAlert.textContent = "please give the poor chart a nice name..";
+    //   titleSetter.appendChild(titleAlert);
+    // }
+  }
 });
 
-
-
-
+/* setting the title */
 function titleSwitch() {
   title = document.getElementById("title-input").value;
   titleDiv = document.getElementById("title-setter");
@@ -47,7 +53,7 @@ function titleSwitch() {
                   <label for="set-title">title <i class="fa-solid fa-file-signature"></i></label>
                   <h2 id="set-title">"<strong>${title}</strong>"</h2>
                   `;
-  
+  //adding "rename"-button
   let renameBtn = document.createElement("button");
   renameBtn.textContent = "rename";
   renameBtn.classList = "btn";
@@ -63,30 +69,23 @@ function titleSwitch() {
       <button id="title-submit-btn" class="btn"><i class="fa-solid fa-check"></i></button>`;
 
     /* setting the EventListener for the "Enter" input repeatedly because it gets lost on DOM change */
-    document
-      .getElementById("title-input")
-      .addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
-          let titleInput = document.getElementById('title-input');
-    
-          if (titleInput && titleInput.value.trim() !== "") {
-            titleSwitch();
-          } else if (!document.querySelector('#title-setter .alert')) {
-            let titleAlert = document.createElement('p');
-            titleAlert.classList= "alert";
-            titleAlert.textContent= 'please give the poor chart a nice name..';
-            titleSetter.appendChild(titleAlert);
-          }
+    titleSetter.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        let titleInput = document.getElementById("title-input");
+
+        if (titleInput && titleInput.value.trim() !== "") {
+          titleSwitch();
         }
-      });
+        //   else if (!document.querySelector("#title-setter .alert")) {
+        //   let titleAlert = document.createElement("p");
+        //   titleAlert.classList = "alert";
+        //   titleAlert.textContent = "please give the poor chart a nice name..";
+        //   titleSetter.appendChild(titleAlert);
+        // }
+      }
+    });
   });
 }
-
-
-
-
-
-
 
 /* Adding and removing rows of the data set */
 
@@ -96,15 +95,15 @@ let dataSetter = document.getElementById("data-setter");
 dataSetter.addEventListener("click", function (event) {
   //remove row
   if (event.target.matches(".remove-row-btn")) {
-    if (document.getElementsByClassName('remove-row-btn').length === 2) {
+    if (document.getElementsByClassName("remove-row-btn").length === 2) {
       removeSpecificRow(event);
-      document.getElementsByClassName('remove-row-btn')[0].remove();
+      document.getElementsByClassName("remove-row-btn")[0].remove();
     } else {
       removeSpecificRow(event);
     }
 
-  //add row
-  } else if (event.target.matches('#plus-row-btn')){
+    //add row
+  } else if (event.target.matches("#plus-row-btn")) {
     // checking if theres already a -row button next to first list item
     // then appending it and creating a new row
     let checkBtn = document.querySelector(".remove-row-btn");
@@ -115,9 +114,9 @@ dataSetter.addEventListener("click", function (event) {
       let firstRow = document.querySelector("ol li");
       if (firstRow) {
         firstRow.appendChild(firstRowBtn);
-      }   
+      }
     }
-  
+
     let newRow = document.createElement("li");
     newRow.classList.add("row");
     newRow.innerHTML = `
@@ -128,15 +127,12 @@ dataSetter.addEventListener("click", function (event) {
     document.getElementsByTagName("ol")[0].appendChild(newRow);
 
     //focus() doesnt work and i dont know why
-    document.getElementById('plus-row-btn').focus(); 
+    document.getElementById("plus-row-btn").focus();
   }
-   
-
-  
 });
 
-dataSetter.addEventListener('keydown', function(event){
-  if (event.key === 'Enter') {
+dataSetter.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
     let checkBtn = document.querySelector(".remove-row-btn");
     if (!checkBtn) {
       let firstRowBtn = document.createElement("button");
@@ -147,7 +143,7 @@ dataSetter.addEventListener('keydown', function(event){
         firstRow.appendChild(firstRowBtn);
       }
     }
-  
+
     let newRow = document.createElement("li");
     newRow.classList.add("row");
     newRow.innerHTML = `
@@ -156,10 +152,8 @@ dataSetter.addEventListener('keydown', function(event){
           <button class='remove-row-btn btn'>- row</button>
       `;
     document.getElementsByTagName("ol")[0].appendChild(newRow);
-  
-
   }
-})
+});
 
 // Removes a specific row from the Data Set by navigation through the
 // DOM via closest <li> item and fetching its index from its parent <ol>
@@ -173,17 +167,8 @@ function removeSpecificRow(event) {
   removeListItem.remove();
 }
 
-
-
-/* create the data array */
-
+/* create the data set array (ofArrays) */
 let allRows = document.getElementsByClassName("row");
-
-function createDataSet(rows) {
-  for (let row = 0; row < rows.length; row++) {
-    dataSet.push(fetchRow(row));
-  }
-}
 
 function fetchRow(rowNumber) {
   let nameData = document.getElementsByClassName("name")[rowNumber].value;
@@ -193,6 +178,11 @@ function fetchRow(rowNumber) {
   return [nameData, valueData];
 }
 
+function createDataSet(rows) {
+  for (let row = 0; row < rows.length; row++) {
+    dataSet.push(fetchRow(row));
+  }
+}
 
 // Set DataSet Example
 let exampleSet = [
@@ -204,106 +194,114 @@ let exampleSet = [
 ];
 
 function setExample() {
-  title = 'Time spent';
+  title = "Time spent";
   dataSet = exampleSet;
-  return (dataSet);
+  return dataSet;
 }
 
 //switch the data setter div if example chart is clicked
-let dataSetterContent = document.getElementById('data-setter').innerHTML;
-
-document.getElementById('data-setter').addEventListener('click', function(event){
-  if (event.target.id === 'reset-data-setter-btn') {
-    document.getElementById('title-setter').style.display = 'flex';
-    document.getElementById('data-setter').innerHTML = dataSetterContent;
-    dataSet= [];
-    chartInstance.destroy();
-    document.getElementById('canvas-div').style.display = 'none';
-    document.getElementById('rename-btn').click();
-    let buttons = document.querySelectorAll('.btn');
-    buttons.forEach(button => {button.classList.remove('active');})
-
-  }
-})
+let dataSetterContent = document.getElementById("data-setter").innerHTML;
 
 function switchDataSetter() {
-  let newContent = document.getElementById('data-setter');
-  newContent.innerHTML = '<button id="reset-data-setter-btn" class="btn centered-btn">create own data set</button>';
+  let newContent = document.getElementById("data-setter");
+  newContent.innerHTML =
+    '<button id="reset-data-setter-btn" class="btn centered-btn">create own data set</button>';
 }
 
-/* choosing the chart type and executing draw*/
+//reverse DOM-changes on data setter div if "create own data set" is clicked
+document
+  .getElementById("data-setter")
+  .addEventListener("click", function (event) {
+    if (event.target.id === "reset-data-setter-btn") {
+      document.getElementById("title-setter").style.display = "flex";
+      document.getElementById("data-setter").innerHTML = dataSetterContent;
+      dataSet = [];
+      chartInstance.destroy();
+      document.getElementById("canvas-div").style.display = "none";
+      document.getElementById("rename-btn").click();
+      let buttons = document.querySelectorAll(".btn");
+      buttons.forEach((button) => {
+        button.classList.remove("active");
+      });
+      document.getElementById("title-input").focus();
+    }
+  });
+
+/* choosing the chart type and invoking draw function*/
 let drawChartBtn = document.getElementsByClassName("draw-chart-btn");
 for (i = 0; i < drawChartBtn.length; i++) {
   drawChartBtn[i].addEventListener("click", function (event) {
-
     if (event.target.id === "pie-chart-btn") {
       if (dataSet === exampleSet) {
-        drawJsChart('pie');
+        drawJsChart("pie");
         return;
       }
-      if (title === 'Time spent') {title = 'generic chart'}
+      //if the title is still set by example data -> reset title to default
+      if (title === "Time spent") {
+        title = "generic chart";
+      }
       dataSet = [];
       createDataSet(allRows);
-      drawJsChart('pie');
-
+      drawJsChart("pie");
     } else if (event.target.id === "col-chart-btn") {
       if (dataSet === exampleSet) {
-        drawJsChart('radar');
+        drawJsChart("radar");
         return;
       }
-      if (title === 'Time spent') {title = 'generic chart'}
+      if (title === "Time spent") {
+        title = "generic chart";
+      }
       dataSet = [];
       createDataSet(allRows);
-      drawJsChart('radar');
-
+      drawJsChart("radar");
     } else if (event.target.id === "bar-chart-btn") {
       if (dataSet === exampleSet) {
-        drawJsChart('bar');
+        drawJsChart("bar");
         return;
       }
-      if (title === 'Time spent') {title = 'generic chart'}
+      if (title === "Time spent") {
+        title = "generic chart";
+      }
       dataSet = [];
       createDataSet(allRows);
-      drawJsChart('bar');
+      drawJsChart("bar");
 
       // Draw Example-Chart
     } else if (event.target.id === "example-chart-btn") {
-      if (dataSet === exampleSet) { return; }
+      if (dataSet === exampleSet) {
+        return;
+      }
       switchDataSetter();
-      document.getElementById('title-setter').style.display = 'none';
+      document.getElementById("title-setter").style.display = "none";
       dataSet = setExample();
       drawJsChart("pie");
-      
     }
   });
 }
-
-
 
 /* CHARTING */
 
 /* setting the chart (customized code snippets from chartJS.org) */
 
-
 let chartInstance = null;
 
 function drawJsChart(chartType) {
-
   //first indicate active chart on corresponding button
-  let buttons = document.querySelectorAll('.btn');
-  buttons.forEach(button => {button.classList.remove('active');})
+  let buttons = document.querySelectorAll(".btn");
+  buttons.forEach((button) => {
+    button.classList.remove("active");
+  });
 
-  if (chartType === 'pie') {
-      document.getElementById('pie-chart-btn').classList.add('active');
-  } else if (chartType === 'radar') {
-    document.getElementById('col-chart-btn').classList.add('active');
+  if (chartType === "pie") {
+    document.getElementById("pie-chart-btn").classList.add("active");
+  } else if (chartType === "radar") {
+    document.getElementById("col-chart-btn").classList.add("active");
+  } else if (chartType === "bar") {
+    document.getElementById("bar-chart-btn").classList.add("active");
+  }
 
-    } else if (chartType === 'bar') { 
-    document.getElementById('bar-chart-btn').classList.add('active');
-    }
-
-  document.getElementById('canvas-div').style.display = 'flex';
-  let jsChart = document.getElementById('js-chart');
+  document.getElementById("canvas-div").style.display = "flex";
+  let jsChart = document.getElementById("js-chart");
 
   // If theres an instance of a chart, destroy it
   if (chartInstance != null) {
@@ -312,7 +310,7 @@ function drawJsChart(chartType) {
 
   // I want the Legend to show only on the pie chart
   let displayLegend = false;
-  if (chartType === 'pie') {
+  if (chartType === "pie") {
     displayLegend = true;
   }
 
@@ -320,56 +318,56 @@ function drawJsChart(chartType) {
   chartInstance = new Chart(jsChart, {
     type: chartType,
     data: {
-      labels: dataSet.map(innerArray => innerArray[0]),
-      datasets: [{
-        data: dataSet.map(innerArray => innerArray[1]),
-        borderWidth: 1
-      }]
+      labels: dataSet.map((innerArray) => innerArray[0]),
+      datasets: [
+        {
+          data: dataSet.map((innerArray) => innerArray[1]),
+          borderWidth: 1,
+        },
+      ],
     },
     options: {
-      
       maintainAspectRatio: false,
       plugins: {
         legend: {
           display: displayLegend,
           labels: {
-            color: 'white'
-          }
+            color: "white",
+          },
         },
         title: {
           display: true,
           text: title,
-          color: 'white',
+          color: "white",
           font: {
-            size: 20
-          }
-        }
-      }
-    }
+            size: 20,
+          },
+        },
+      },
+    },
   });
 
   // scroll into view
-  document.getElementById('js-chart').scrollIntoView({
-    behavior: 'smooth',
-    block: 'start',
-    inline: 'nearest'
+  document.getElementById("js-chart").scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "nearest",
   });
-
 }
 
 //downloading the chart as Jpg
-let downloadBtn = document.getElementById('save-chart-btn');
-downloadBtn.addEventListener('click', downloadChart);
+let downloadBtn = document.getElementById("save-chart-btn");
+downloadBtn.addEventListener("click", downloadChart);
 
 function downloadChart() {
-  let canvas = document.getElementById('js-chart');
-  let dataURL = canvas.toDataURL('image/jpg');
+  let canvas = document.getElementById("js-chart");
+  let dataURL = canvas.toDataURL("image/jpg");
 
-  let link = document.createElement('a');
+  let link = document.createElement("a");
   link.href = dataURL;
 
   //Replace empty spaces in the title with underscore
-  let newTitle = title.replace(/\s/g, '_');
+  let newTitle = title.replace(/\s/g, "_");
   link.download = `${newTitle}_easyChart.jpg`;
   link.click();
 }
