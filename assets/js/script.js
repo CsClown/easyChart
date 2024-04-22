@@ -256,11 +256,36 @@ for (i = 0; i < drawChartBtn.length; i++) {
 
 /* CHARTING */
 
-/* setting the chart (customized code snippets from chartJS.org) */
+function dataMissing() {
+  for (let i = 0; i < dataSet.length; i++) {
+    for (let j = 0; j < dataSet[i].length; j++) {
+      if (dataSet[i][j] === '') {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
+/* setting the chart */
 
 let chartInstance = null;
 
 function drawJsChart(chartType) {
+  //check if any fields are empty
+  let warning = document.querySelector('.data-alert');
+  if (warning) {
+    warning.parentNode.removeChild(warning);
+  }
+
+  if (dataMissing()) {
+    let chartBtnRow = document.getElementById('chart-buttons');
+    let warning = document.createElement('p');
+    warning.classList.add('data-alert', 'alert');
+    warning.innerText=('data is missing..');
+    chartBtnRow.appendChild(warning);
+    return;
+  }
   //first indicate active chart on corresponding button
     //reset button color
     resetActive();
