@@ -40,7 +40,7 @@ That's what easyChart is all about. Your rendered chart is downloadable as a JPG
 
 ## Wireframes
 
-The wireframes for easyChart were produced in [Figma](https://www.figma.com/). Frames were created for full-width display and small mobile devices. The final site may differ from the wireframes due to developments during the creation process.
+The wireframes for easyChart were produced in [Figma](https://www.figma.com/). Frames were created for small mobile devices. The final site may differ from the wireframes due to developments during the creation process.
 
 ![Wireframe Image](assets/readme-images/easyChartWireframes.png)
 
