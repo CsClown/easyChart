@@ -13,6 +13,7 @@ html {
   background: url("../images/background.jpg") no-repeat center center / cover;
   background-color: #2f4858;
   min-height: 100vh;
+  max-width: 100vw;
 }
 
 * {
@@ -27,6 +28,7 @@ html {
 body {
   min-height: 100vh;
   width: 100%;
+  max-width: 100vw;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -123,6 +125,7 @@ strong {
 #data-setter div {
   position: relative;
   padding: 20px;
+
 }
 
 #title-submit-btn {
@@ -151,7 +154,7 @@ strong {
 #value-heading {
   position: relative;
   display: inline-block;
-  left: 105px;
+  left: 100px;
 }
 
 #data-setter button {

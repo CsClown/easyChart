@@ -1,32 +1,10 @@
 # Testing
 ## Code Validation
-The Bitcoin Bridge site has be thoroughly tested. All the code has been run through the [W3C html Validator](https://validator.w3.org/) and the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). Minor errors were found on the home and inspiration pages. After a fix and retest, no errors were returned for both. 
+The easyChart site has be thoroughly tested. All the code has been run through the [W3C html Validator](https://validator.w3.org/) and the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). Minor errors were found on the home and inspiration pages. After a fix and retest, no errors were returned for both. 
 
-The HTML validator results for each page are below:
 
-* Home page
 
-![W3C Validator test result](assets/readme-images/w3ctesting.png)
 
-* Details page
-
-![W3C Validator test result](assets/readme-images/w3ctesting.png)
-
-* Memes page
-
-![W3C Validator test result](assets/readme-images/w3ctesting.png)
-
-* Contact page
-
-![W3C Validator test result](assets/readme-images/w3ctesting.png)
-
-* Form validation page
-
-![W3C Validator test result](assets/readme-images/w3ctesting.png)
-
-The CSS validator results are below:
-
-![CSS Validator test result](assets/readme-images/csstesting.png)
 
 ## Responsiveness Test
 
