@@ -19,12 +19,6 @@ titleSetter.addEventListener("click", function (event) {
       titleSwitch();
     } else {
     }
-    //   else if (!document.querySelector("#title-setter .alert")) {
-    //   let titleAlert = document.createElement("p");
-    //   titleAlert.classList = "alert";
-    //   titleAlert.textContent = "please give the poor chart a nice name..";
-    //   titleSetter.appendChild(titleAlert);
-    // }
   }
 });
 
@@ -36,12 +30,6 @@ titleSetter.addEventListener("keydown", function (event) {
     if (titleInput && titleInput.value.trim() !== "") {
       titleSwitch();
     }
-    //   else if (!document.querySelector("#title-setter .alert")) {
-    //   let titleAlert = document.createElement("p");
-    //   titleAlert.classList = "alert";
-    //   titleAlert.textContent = "please give the poor chart a nice name..";
-    //   titleSetter.appendChild(titleAlert);
-    // }
   }
 });
 
@@ -76,12 +64,6 @@ function titleSwitch() {
         if (titleInput && titleInput.value.trim() !== "") {
           titleSwitch();
         }
-        //   else if (!document.querySelector("#title-setter .alert")) {
-        //   let titleAlert = document.createElement("p");
-        //   titleAlert.classList = "alert";
-        //   titleAlert.textContent = "please give the poor chart a nice name..";
-        //   titleSetter.appendChild(titleAlert);
-        // }
       }
     });
   });
@@ -172,9 +154,7 @@ let allRows = document.getElementsByClassName("row");
 
 function fetchRow(rowNumber) {
   let nameData = document.getElementsByClassName("name")[rowNumber].value;
-  let valueData = parseInt(
-    document.getElementsByClassName("value")[rowNumber].value
-  );
+  let valueData = document.getElementsByClassName("value")[rowNumber].value;
   return [nameData, valueData];
 }
 
@@ -208,21 +188,19 @@ function switchDataSetter() {
     '<button id="reset-data-setter-btn" class="btn centered-btn">create own data set</button>';
 }
 
-//reverse DOM-changes on data setter div if "create own data set" is clicked
+
+//reverse DOM-  changes on data setter div if "create own data set" is clicked
 document
   .getElementById("data-setter")
   .addEventListener("click", function (event) {
     if (event.target.id === "reset-data-setter-btn") {
+      resetActive();
       document.getElementById("title-setter").style.display = "flex";
       document.getElementById("data-setter").innerHTML = dataSetterContent;
       dataSet = [];
       chartInstance.destroy();
       document.getElementById("canvas-div").style.display = "none";
       document.getElementById("rename-btn").click();
-      let buttons = document.querySelectorAll(".btn");
-      buttons.forEach((button) => {
-        button.classList.remove("active");
-      });
       document.getElementById("title-input").focus();
     }
   });
@@ -287,11 +265,10 @@ let chartInstance = null;
 
 function drawJsChart(chartType) {
   //first indicate active chart on corresponding button
-  let buttons = document.querySelectorAll(".btn");
-  buttons.forEach((button) => {
-    button.classList.remove("active");
-  });
+    //reset button color
+    resetActive();
 
+    //set active
   if (chartType === "pie") {
     document.getElementById("pie-chart-btn").classList.add("active");
   } else if (chartType === "radar") {
@@ -352,6 +329,14 @@ function drawJsChart(chartType) {
     behavior: "smooth",
     block: "start",
     inline: "nearest",
+  });
+}
+
+//reset active chart type indicator
+function resetActive() {
+  let buttons = document.querySelectorAll(".btn");
+  buttons.forEach((button) => {
+    button.classList.remove("active");
   });
 }
 

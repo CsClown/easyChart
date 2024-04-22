@@ -17,7 +17,7 @@ html {
 
 * {
   font-family: "Jost", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 0.1rem;
   margin: 0;
   padding: 0;
@@ -61,7 +61,7 @@ p {
 
 strong {
   text-shadow: #ffffff76 0px 0px 2px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 #set-title {
@@ -212,7 +212,8 @@ strong {
 }
 
 #example-chart-btn {
-  background-color: #d1ed8d;
+  color: white;
+  background-color: var(--third-color);
 }
 #example-chart-btn:hover {
   background-color: rgba(255, 0, 0, 0.608);
