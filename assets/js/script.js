@@ -272,12 +272,12 @@ function dataMissing() {
 let chartInstance = null;
 
 function drawJsChart(chartType) {
-  //check if any fields are empty
+  //remove potential warning
   let warning = document.querySelector('.data-alert');
   if (warning) {
     warning.parentNode.removeChild(warning);
   }
-
+  //check if any fields are empty
   if (dataMissing()) {
     let chartBtnRow = document.getElementById('chart-buttons');
     let warning = document.createElement('p');
