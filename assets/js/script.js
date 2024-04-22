@@ -343,7 +343,7 @@ downloadBtn.addEventListener("click", downloadChart);
 
 function downloadChart() {
   let canvas = document.getElementById("js-chart");
-  let dataURL = canvas.toDataURL("image/jpg");
+  let dataURL = canvas.toDataURL("image/jpeg");
 
   let link = document.createElement("a");
   link.href = dataURL;

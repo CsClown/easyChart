@@ -17,7 +17,7 @@ Note: On wide display types the contents of the site are restricted in width to 
 
 ## Browser Compatibility
 
-Bitcoin Bridge site was tested on the following browsers with no visible issues for the user. 
+easyChart site was tested on the following browsers with no visible issues for the user. 
 Google Chrome, Microsoft Edge, Safari and Mozilla Firefox. Appearance, functionality and responsiveness were consistent throughout for a range of device sizes and browsers.
 
 
