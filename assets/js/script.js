@@ -107,9 +107,6 @@ dataSetter.addEventListener("click", function (event) {
           <button class='remove-row-btn btn'>- row</button>
       `;
     document.getElementsByTagName("ol")[0].appendChild(newRow);
-
-    //focus() doesnt work and i dont know why
-    document.getElementById("plus-row-btn").focus();
   }
 });
 

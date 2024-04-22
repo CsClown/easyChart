@@ -3,14 +3,11 @@
 The easyChart site has be thoroughly tested. All the code has been run through the [W3C html Validator](https://validator.w3.org/) and the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). Minor errors were found on the home and inspiration pages. After a fix and retest, no errors were returned for both. 
 
 
-
-
-
 ## Responsiveness Test
 
 * The responsive design tests were carried out manually with [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).
 
-|        | Moto G4 | Galaxy S5 | iPhone 5 | iPad | iPad Pro | Display <1200px | Display >1200px |
+|        | Google Pixel | Galaxy S5 | iPhone 5 | iPad | iPad Pro | Display <1200px | Display >1200px |
 |--------|---------|-----------|----------|------|----------|-----------------|-----------------|
 | Render | pass    | pass      | pass     | pass | pass     | pass            | pass            |
 | Images | pass    | pass      | pass     | pass | pass     | pass            | pass            |
