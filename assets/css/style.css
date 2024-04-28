@@ -11,6 +11,21 @@
   --big-margin: 40px;
 }
 
+/* tutorial image overlay */
+#overlay {
+  display: none;
+  background: url('../images/turorial.png') no-repeat center center / contain;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 100%;
+}
+
 html {
   background: url("../images/background.jpg") no-repeat center center / cover;
   background-color: #2f4858;
@@ -66,6 +81,11 @@ p {
 strong {
   text-shadow: #ffffff76 0px 0px 2px;
   font-weight: 500;
+}
+
+#tutorial-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
 }
 
 #set-title {
