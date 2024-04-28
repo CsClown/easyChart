@@ -139,6 +139,7 @@ easyChart is designed to be user-friendly and inviting. All features are on one 
 
 - [HTML5](https://html.spec.whatwg.org/) - Provides the content and structure for the website.
 - [CSS](https://www.w3.org/Style/CSS/Overview.en.html) - Provides the styling.
+- [JavaScript](https://ecma-international.org/publications-and-standards/standards/ecma-262/) - Provides the DOM manipulation and handling of Data.
 - [Figma](https://www.figma.com/) - Used to create the wireframes.
 - [Gitpod](https://www.gitpod.io/) - Used to deploy the website.
 - [GitHub](https://github.com/) - Used to host and edit the website.

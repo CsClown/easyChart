@@ -1,6 +1,7 @@
 # Testing
 ## Code Validation
-The easyChart site has been thoroughly tested. All the code has been run through the [W3C HTML Validator](https://validator.w3.org/) and the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/). Minor errors were found on the home and inspiration pages. After fixing and retesting, no errors were found for both pages.
+The easyChart site has been thoroughly tested. All the code has been run through the [W3C HTML Validator](https://validator.w3.org/),the [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and [JSHint](https://jshint.com/). Minor errors were found on the home and inspiration pages. After fixing and retesting, no errors were found for both pages.
+JSHint shows some warnings regarding the use of the "let"-keyword and compatibility (ES6) as well es some undefined variables which i assume is a flawed assumption because i double checked these and they are defined and used. Maybe there is some subtlety to this which i cant comprehend yet.
 
 ## Responsiveness Test
 * The responsive design tests were carried out manually using [Google Chrome DevTools](https://developer.chrome.com/docs/devtools/) and [Responsive Design Checker](https://www.responsivedesignchecker.com/).

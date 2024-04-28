@@ -71,7 +71,6 @@ function titleSwitch() {
 
 /* Adding and removing rows of the data set */
 
-let plusBtn = document.getElementById("plus-row-btn");
 let dataSetter = document.getElementById("data-setter");
 
 dataSetter.addEventListener("click", function (event) {

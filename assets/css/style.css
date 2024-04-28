@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* setting the color scheme and global style variable */
 :root {
   --main-color: #d5fff1;
   --off-color: #a0c8bb;
@@ -9,6 +10,7 @@
   --small-margin: 20px;
   --big-margin: 40px;
 }
+
 html {
   background: url("../images/background.jpg") no-repeat center center / cover;
   background-color: #2f4858;
@@ -33,13 +35,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Jost", sans-serif;
 }
 
 div {
   opacity: 90%;
 }
 
+/* easyChart big heading */
 #main-heading {
   font-weight: 300;
   font-size: 250%;
@@ -70,10 +72,12 @@ strong {
   padding: 0px 0px;
 }
 
+/* color for alert messages */
 .alert {
   color: red;
 }
 
+/* all button styles */
 .btn {
   box-shadow: var(--main-shadow);
   border-style: hidden;
@@ -87,11 +91,13 @@ strong {
   box-shadow: white 0px 0px 4px;
 }
 
+/* active chart indicator on buttons*/
 .active {
   background-color: rgba(255, 0, 0, 0.395);
   box-shadow: white 0px 0px 4px;
 }
 
+/* Div for title-input */
 #title-setter {
   box-shadow: var(--main-shadow);
   background-color: var(--off-color);
@@ -109,6 +115,7 @@ strong {
   margin: 5px 10px;
 }
 
+/* Div for inputting data for the dataSet */
 #data-setter {
   display: flex;
   flex-direction: column;
@@ -166,6 +173,7 @@ strong {
   border-radius: var(--border-radius);
 }
 
+/* appears after DOM change if you use example data */
 #reset-data-setter-btn {
   padding: 20px;
 }
@@ -227,6 +235,7 @@ strong {
   font-size: 100%;
 }
 
+/* chart display area */
 #canvas-div {
   display: none;
   flex-direction: column;
@@ -256,6 +265,7 @@ footer p {
   font-size: smaller;
 }
 
+/* lets get responsive */
 @media screen and (min-width: 768px) {
   #main-heading {
     font-weight: 200;
