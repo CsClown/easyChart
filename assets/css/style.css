@@ -12,18 +12,32 @@
 }
 
 /* tutorial image overlay */
-#overlay {
+#tutorial {
+  position: absolute;
   display: none;
-  background: url('../images/turorial.png') no-repeat center center / contain;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
   opacity: 100%;
+  
+  background-color: rgba(0, 0, 0, 0.695);
+  z-index: 100;
+}
+
+#tutorial h2, #tutorial p {
+  color: white;
+}
+
+
+#tutorial img {
+  /*border: 1px solid var(--third-color);*/
+  top: 20px;
+  width: 300px;
+  
+  border-radius: 8px;
+  
 }
 
 html {
@@ -306,6 +320,11 @@ footer p {
   .text-input {
     width: 200px;
     margin: 10px;
+  }
+
+  #tutorial img {
+    width: 600px;
+    
   }
 
   #data-setter {

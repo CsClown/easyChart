@@ -1,10 +1,10 @@
 /* showing tutorial img */
 let tutorialBtn = document.getElementById('tutorial-btn');
 tutorialBtn.addEventListener('click', function() {
-  let overlay = document.getElementById('overlay');
-  overlay.style.display = 'flex';
-  overlay.addEventListener('click', function() {
-    overlay.style.display = 'none';
+  let tutorial = document.getElementById('tutorial');
+  tutorial.style.display = 'flex';
+  tutorial.addEventListener('click', function() {
+    tutorial.style.display = 'none';
   })
 })
 
