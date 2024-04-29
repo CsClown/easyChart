@@ -113,7 +113,7 @@ dataSetter.addEventListener("click", function (event) {
     newRow.classList.add("row");
     newRow.innerHTML = `
           <input type="text" name="name" class="name text-input" />
-          <input type="number" name="value" class="value text-input" />
+          <input type="number" min="0" name="value" class="value text-input" />
           <button class='remove-row-btn btn'>- row</button>
       `;
     document.getElementsByTagName("ol")[0].appendChild(newRow);
@@ -137,7 +137,7 @@ dataSetter.addEventListener("keydown", function (event) {
     newRow.classList.add("row");
     newRow.innerHTML = `
           <input type="text" name="name" class="name text-input" />
-          <input type="number" name="value" class="value text-input" />
+          <input type="number" min="0" name="value" class="value text-input" />
           <button class='remove-row-btn btn'>- row</button>
       `;
     document.getElementsByTagName("ol")[0].appendChild(newRow);

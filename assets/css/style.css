@@ -21,8 +21,7 @@
   width: 100vw;
   height: 100vh;
   opacity: 100%;
-  
-  background-color: rgba(0, 0, 0, 0.695);
+   background-color: rgba(0, 0, 0, 0.695);
   z-index: 100;
 }
 
