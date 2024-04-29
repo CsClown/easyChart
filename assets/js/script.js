@@ -80,7 +80,7 @@ function titleSwitch() {
   });
 }
 
-/* Adding and removing rows of the data set */
+/* Adding and removing rows of the data setter */
 
 let dataSetter = document.getElementById("data-setter");
 
@@ -120,6 +120,7 @@ dataSetter.addEventListener("click", function (event) {
   }
 });
 
+// add new row by pressing "Enter" in the data-setter
 dataSetter.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     let checkBtn = document.querySelector(".remove-row-btn");
@@ -162,7 +163,10 @@ let allRows = document.getElementsByClassName("row");
 function fetchRow(rowNumber) {
   let nameData = document.getElementsByClassName("name")[rowNumber].value;
   let valueData = document.getElementsByClassName("value")[rowNumber].value;
-  return [nameData, valueData];
+  if (valueData < 0) {
+    return ['',''];
+  } else {  return [nameData, valueData]; }  
+  
 }
 
 function createDataSet(rows) {
@@ -292,8 +296,13 @@ function drawJsChart(chartType) {
     let chartBtnRow = document.getElementById('chart-buttons');
     let warning = document.createElement('p');
     warning.classList.add('data-alert', 'alert');
-    warning.innerText=('data is missing..');
+    warning.innerText=('data invalid: please check for empty fields or negative values');
     chartBtnRow.appendChild(warning);
+    document.getElementsByClassName("alert")[0].scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "nearest",
+    });
     return;
   }
   //first indicate active chart on corresponding button
