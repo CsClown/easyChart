@@ -29,14 +29,10 @@
   color: white;
 }
 
-
 #tutorial img {
-  /*border: 1px solid var(--third-color);*/
   top: 20px;
   width: 95vw;
-  
   border-radius: 8px;
-  
 }
 
 html {
@@ -102,6 +98,7 @@ strong {
 }
 
 #set-title {
+  text-align: center;
   padding: 0px 0px;
 }
 
@@ -162,10 +159,10 @@ strong {
   padding: 10px 20px;
   max-width: 100vw;
 }
+
 #data-setter div {
   position: relative;
   padding: 20px;
-
 }
 
 #title-submit-btn {
@@ -200,7 +197,6 @@ strong {
 #data-setter button {
   box-shadow: var(--main-shadow);
   margin-bottom: 10px;
-
   width: 100px;
   border-style: hidden;
   border-radius: var(--border-radius);
@@ -214,7 +210,6 @@ strong {
 /* + row button DIV */
 .btn-div {
   display: flex;
-
   justify-content: center;
   align-items: center;
 }
@@ -236,6 +231,7 @@ strong {
 #data-setter .remove-row-btn {
   width: 45px;
 }
+
 #data-setter .remove-row-btn:hover {
   background-color: rgba(255, 0, 0, 0.608);
   box-shadow: white 0px 0px 4px;
@@ -259,6 +255,7 @@ strong {
   color: white;
   background-color: var(--third-color);
 }
+
 #example-chart-btn:hover {
   background-color: rgba(255, 0, 0, 0.608);
   box-shadow: white 0px 0px 4px;
@@ -281,6 +278,7 @@ strong {
   background-color: var(--off-color);
   border-radius: var(--border-radius);
 }
+
 #js-chart {
   margin-bottom: 40px;
 }
@@ -294,6 +292,7 @@ footer {
   bottom: 0px;
   margin-bottom: 20px;
 }
+
 footer p {
   font-size: smaller;
 }
@@ -305,10 +304,10 @@ footer p {
     font-size: 600%;
     text-shadow: #00000076 0px 0px 2px;
   }
+
   #title-setter {
     display: flex;
     align-items: center;
-
     border-radius: var(--border-radius);
     box-shadow: var(--main-shadow);
     margin-top: 30px;
@@ -344,9 +343,11 @@ footer p {
     font-size: 16px;
     padding: 10px;
   }
+
   #chart-buttons {
     display: block;
   }
+
   .draw-chart-btn {
     padding: 20px;
   }
@@ -357,6 +358,7 @@ footer p {
     height: 60vh;
     max-height: 800px;
   }
+
   .fa-solid {
     font-size: 150%;
   }

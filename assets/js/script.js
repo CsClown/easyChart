@@ -211,7 +211,9 @@ document
       dataSet = [];
       chartInstance.destroy();
       document.getElementById("canvas-div").style.display = "none";
-      document.getElementById("rename-btn").click();
+      //reset title to default after "example data" changed it
+      if (document.getElementById("rename-btn")) {document.getElementById("rename-btn").click();}
+      //document.getElementById("rename-btn").click();
       document.getElementById("title-input").focus();
     }
   });
