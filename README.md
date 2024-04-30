@@ -22,6 +22,7 @@ That's what easyChart is all about. Your rendered chart is downloadable as a JPG
     - [Typography](#typography)
     - [Color Scheme](#color-scheme)
 - [Features](#features)
+    - [Tutorial](#tutorial)
     - [Title Setter](#title-setter)
     - [Data Setter](#data-setter)
     - [Chart Type Selector](#chart-type-selector)

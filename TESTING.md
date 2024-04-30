@@ -26,12 +26,12 @@ The easyChart site was tested on the following browsers:
 
 ## Known Bugs
 ### Resolved
-* **Landscape orientation for mobile**: Landscape orientation for mobile doesn't work (Apple doesn't support the required API). The decision was made to switch to JS charts instead of Google charts and remove the feature. JS charts offer better responsive configuration.
+* **Landscape orientation for mobile**: Landscape orientation for mobile doesn't work (Apple doesn't support the required API). The decision was made to switch to JS charts instead of Google charts and remove the feature. JS charts offers better responsive configuration.
 * **Title naming**: After implementing JS charts and removing Google charts, the title naming didn't work anymore. Realization: If JS throws a compilation error, nothing works. I found a code error elsewhere and fixed it. Lesson learned.
 * **"+row" button**: The "+row" button didn't work after implementing the DOM change with an example chart. Fixed by changing the event listeners to parent and addressing the element with 'target.matches'.
 * **Button hover effects**: Not consistent. Resolved through better CSS targeting.
-* **Empty title input**: Check for empty title input didn't work if executed once with Enter. Enter-input doesn't work after the first input with Enter. Resolved by not reacting to an empty input field and keeping the default title.
-* **"Create your own data set"**: When users clicked on "create your own data set," the title wasn't the set title but "generic chart." Resolved through `js.click()` on `rename-btn` to reset the title-setter.
+* **Empty title input**: Check for empty title input didn't work if executed once with Enter. Enter-input doesn't work after the first input with Enter. Resolved by not reacting to an empty input field and keeping the default title if no title is entered.
+* **"Create your own data set"**: When users clicked on "create your own data set," the title wasn't the set title but "generic chart." Resolved through `js.click()` on `rename-btn` to reset the title-setter. This led to a console error if the title WASNT set before displaying the example data. Fixed by an if condition to check whether the `rename-btn` is actually there.
 * **Focus() method**: The `focus()` method doesn't work on the "+row" button. Resolved: It actually does work but only selects the element for keyboard input, not the mouse cursor. Removed feature due to ugly frame around button element (e.g., in Safari browser).
 * **Active chart indicator**: Doesn't reset on data wipe. Resolved by adding the `resetActive()` function.
 * **Chart image download**: Downloads as PNG in Firefox instead of JPG. Fixed typo: JPG -> JPEG in dataURL.
