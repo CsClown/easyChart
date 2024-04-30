@@ -1,9 +1,9 @@
 /* showing tutorial img */
 let tutorialBtn = document.getElementById('tutorial-btn');
-tutorialBtn.addEventListener('click', function() {
+tutorialBtn.addEventListener('click', function () {
   let tutorial = document.getElementById('tutorial');
   tutorial.style.display = 'flex';
-  tutorial.addEventListener('click', function() {
+  tutorial.addEventListener('click', function () {
     tutorial.style.display = 'none';
   })
 })
@@ -24,12 +24,11 @@ let titleSetter = document.getElementById("title-setter");
 
 /* *click* */
 titleSetter.addEventListener("click", function (event) {
-  if (event.target.matches("#title-submit-btn")) {
+  if (event.target.matches("#title-submit-btn") || event.target.matches('.fa-check')) {
     let titleInput = document.getElementById("title-input");
     if (titleInput && titleInput.value.trim() !== "") {
       titleSwitch();
-    } else {
-    }
+    } else {}
   }
 });
 
@@ -37,7 +36,6 @@ titleSetter.addEventListener("click", function (event) {
 titleSetter.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     let titleInput = document.getElementById("title-input");
-
     if (titleInput && titleInput.value.trim() !== "") {
       titleSwitch();
     }
@@ -49,7 +47,6 @@ function titleSwitch() {
   title = document.getElementById("title-input").value;
   titleDiv = document.getElementById("title-setter");
   titleDiv.innerHTML = `
-                  <label for="set-title">title <i class="fa-solid fa-file-signature"></i></label>
                   <h2 id="set-title">"<strong>${title}</strong>"</h2>
                   `;
   //adding "rename"-button
@@ -164,9 +161,11 @@ function fetchRow(rowNumber) {
   let nameData = document.getElementsByClassName("name")[rowNumber].value;
   let valueData = document.getElementsByClassName("value")[rowNumber].value;
   if (valueData < 0) {
-    return ['',''];
-  } else {  return [nameData, valueData]; }  
-  
+    return ['', ''];
+  } else {
+    return [nameData, valueData];
+  }
+
 }
 
 function createDataSet(rows) {
@@ -212,7 +211,9 @@ document
       chartInstance.destroy();
       document.getElementById("canvas-div").style.display = "none";
       //reset title to default after "example data" changed it
-      if (document.getElementById("rename-btn")) {document.getElementById("rename-btn").click();}
+      if (document.getElementById("rename-btn")) {
+        document.getElementById("rename-btn").click();
+      }
       //document.getElementById("rename-btn").click();
       document.getElementById("title-input").focus();
     }
@@ -298,7 +299,7 @@ function drawJsChart(chartType) {
     let chartBtnRow = document.getElementById('chart-buttons');
     let warning = document.createElement('p');
     warning.classList.add('data-alert', 'alert');
-    warning.innerText=('data invalid: please check for empty fields or negative values');
+    warning.innerText = ('data invalid: please check for empty fields or negative values');
     chartBtnRow.appendChild(warning);
     document.getElementsByClassName("alert")[0].scrollIntoView({
       behavior: "smooth",
@@ -308,10 +309,10 @@ function drawJsChart(chartType) {
     return;
   }
   //first indicate active chart on corresponding button
-    //reset button color
-    resetActive();
+  //reset button color
+  resetActive();
 
-    //set active
+  //set active
   if (chartType === "pie") {
     document.getElementById("pie-chart-btn").classList.add("active");
   } else if (chartType === "radar") {
@@ -339,12 +340,10 @@ function drawJsChart(chartType) {
     type: chartType,
     data: {
       labels: dataSet.map((innerArray) => innerArray[0]),
-      datasets: [
-        {
-          data: dataSet.map((innerArray) => innerArray[1]),
-          borderWidth: 1,
-        },
-      ],
+      datasets: [{
+        data: dataSet.map((innerArray) => innerArray[1]),
+        borderWidth: 1,
+      }, ],
     },
     options: {
       maintainAspectRatio: false,
