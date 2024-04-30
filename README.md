@@ -77,9 +77,15 @@ easyChart is designed to be user-friendly and inviting. All features are on one 
 
 ## Existing Features
 
+- ### Tutorial
+
+  - At the top of the page, there is a button that, when clicked, opens a window displaying a clear and straightforward explanation of how the site functions.
+
+![Tutorial Image](assets/readme-images/easyChartTutorial.png)
+
 - ### Title Setter
 
-  - Positioned at the top, the input field automatically focuses, allowing users to set the chart title. The interface switches to display the title after it is set and features a "rename" button on the set title.
+  - The first of the two input sections contains the title setter. The input field automatically focuses, allowing users to set the chart title. The interface switches to display the title after it is set and features a "rename" button for the set title.
 
 ![Title Setter Image 1](assets/readme-images/easyChartTitleSetter1.png)
 ![Title Setter Image 2](assets/readme-images/easyChartTitleSetter2.png)

@@ -19,9 +19,9 @@
   justify-content: flex-start;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   opacity: 100%;
-   background-color: rgba(0, 0, 0, 0.695);
+  background-color: rgba(0, 0, 0, 0.695);
   z-index: 100;
 }
 
@@ -33,7 +33,7 @@
 #tutorial img {
   /*border: 1px solid var(--third-color);*/
   top: 20px;
-  width: 300px;
+  width: 95vw;
   
   border-radius: 8px;
   
@@ -322,8 +322,8 @@ footer p {
   }
 
   #tutorial img {
-    width: 600px;
-    
+    width: 90vw;
+    max-width: 1000px;
   }
 
   #data-setter {
